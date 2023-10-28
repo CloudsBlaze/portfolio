@@ -1,4 +1,4 @@
-# from django.shortcuts import render
+from django.shortcuts import render
 from rest_framework.permissions import AllowAny, IsAuthenticated
 from django.shortcuts import get_object_or_404, render
 from rest_framework.response import Response
@@ -33,8 +33,9 @@ class ContactUsAPI(APIView):
     def post(self, request, pk=None, format=None):
         serializer = serializers.ContactUsSerializer(data=request.data)
         print("serializer.is_valid()", serializer.is_valid())
-        if serializer.is_valid():
+        if serializer.is_valid():       
             serializer.save()
+            # print("serializer".errors)
             return Response(
                 {"stauts": "success", "data": serializer.data},
                 status=status.HTTP_201_CREATED,
@@ -45,7 +46,8 @@ class ContactUsAPI(APIView):
             {"stauts": "error", "data": serializer.errors},
             status=status.HTTP_400_BAD_REQUEST,
         )
-    
+
+
     def patch(self, request, pk, format=None):
         instance = models.ContactUs.objects.get(pk=pk)
         serializer = serializers.ContactUsSerializer(
@@ -84,7 +86,7 @@ class ContactUsAPI(APIView):
         instance = get_object_or_404(models.ContactUs, pk=pk)
         instance.delete()
         return Response(
-            {"msg": "Category deleted successfully"}, status=status.HTTP_204_NO_CONTENT
+            {"msg": "Contact successfully deleted"}, status=status.HTTP_204_NO_CONTENT
         )
 
 
