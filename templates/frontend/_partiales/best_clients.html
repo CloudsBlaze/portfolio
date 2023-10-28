@@ -1,0 +1,39 @@
+{% load static %}
+<div class="container bg-gray py-5">
+    <div class=" d-flex flex-column">
+        <h2 class="text-center">Our Best Clients</h2>
+        <p class="text-center">We envision specialized and customized trainings for every business arena to get mastery
+            in decision
+            making.</p>
+    </div>
+    <div class="row mt-5">
+        {% for d in data.clients|slice:":6" %}
+
+        <div class="col-6 text-center col-md">
+            <img alt="{{d.name}}" src={{d.client_image.image}}
+                class=" img-fluid rounded-circle thubmnails-medium m-2" />
+        </div>
+
+        <div class="col-6 text-center col-md">
+            <img alt="{{d.name}}" src={{d.client_image.image}}
+                class=" img-fluid rounded-circle thubmnails-medium m-2" />
+        </div>
+        <div class="col-6 text-center col-md">
+            <img alt="{{d.name}}" src={{d.client_image.image}}
+                class=" img-fluid rounded-circle thubmnails-medium m-2" />
+        </div>
+        <div class="col-6 text-center col-md">
+            <img alt="{{d.name}}" src={{d.client_image.image}}
+                class=" img-fluid rounded-circle thubmnails-medium m-2" />
+        </div>
+        <div class="col-6 text-center col-md">
+            <img alt="{{d.name}}" src={{d.client_image.image}}
+                class=" img-fluid rounded-circle thubmnails-medium m-2" />
+        </div>
+        <div class="col-6 text-center col-md">
+            <img alt="{{d.name}}" src={{d.client_image.image}}
+                class=" img-fluid rounded-circle thubmnails-medium m-2" />
+        </div>
+        {% endfor %}
+    </div>
+</div>

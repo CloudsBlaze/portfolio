@@ -4,6 +4,7 @@ from django.shortcuts import get_object_or_404, render
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework import status
+from rest_framework.renderers import TemplateHTMLRenderer
 
 
 # from .models import ContactUs
@@ -14,6 +15,10 @@ import contact_us.serializers as serializers
 
 # Create your views here.
 class ContactUsAPI(APIView):
+    renderer_classes = [TemplateHTMLRenderer]
+    template_name = 'profile_list.html'
+
+
     def get(self, request,  pk=None, format=None):
         if pk is None:
             instance = models.ContactUs.objects.all()
@@ -22,14 +27,14 @@ class ContactUsAPI(APIView):
                 {"stauts": "success", "data": serializer.data},
                 status=status.HTTP_200_OK,
             )
-                
+
         instance = get_object_or_404(models.ContactUs, id=pk)
         serializer = serializers.ContactUsSerializer(instance)
         return Response(
                 {"stauts": "success", "data": serializer.data},
                 status=status.HTTP_200_OK,
             )
-    
+
     def post(self, request, pk=None, format=None):
         serializer = serializers.ContactUsSerializer(data=request.data)
         print("serializer.is_valid()", serializer.is_valid())
@@ -45,7 +50,7 @@ class ContactUsAPI(APIView):
             {"stauts": "error", "data": serializer.errors},
             status=status.HTTP_400_BAD_REQUEST,
         )
-    
+
     def patch(self, request, pk, format=None):
         instance = models.ContactUs.objects.get(pk=pk)
         serializer = serializers.ContactUsSerializer(
@@ -62,7 +67,7 @@ class ContactUsAPI(APIView):
             {"stauts": "error", "data": serializer.errors},
             status=status.HTTP_400_BAD_REQUEST,
         )
-    
+
     def put(self, request, pk, format=None):
         instance = models.ContactUs.objects.get(pk=pk)
         serializer = serializers.ContactUsSerializer(
