@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'rest_framework',
     "contact_us",
     "frontend"
+    "events",
+    "image"
 
 ]
 
