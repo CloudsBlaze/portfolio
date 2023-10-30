@@ -30,7 +30,7 @@ class Event(models.Model):
     
 
 class Participant(models.Model):
-    name =  models.CharField(max_length=100,default=None)
+    name =  models.CharField(max_length=100,default=None, null=True)
     event = models.ForeignKey(Event, on_delete=models.CASCADE, null=True, blank=True)
 
     def __str__(self):

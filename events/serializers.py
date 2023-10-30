@@ -12,7 +12,7 @@ class ParticipantSerializer(serializers.ModelSerializer):
 class EventSerializer(serializers.ModelSerializer):
     # title = serializers.CharField(max_length=100, required=False)
     # start_date = serializers.DateTimeField(required=False)
-    participants = ParticipantSerializer(many=True, read_only=True)  # event has many event_Participants
+    participants =ParticipantSerializer(many=True, read_only=True)  # event has many event_Participants
 
     class Meta:
          model = Event
