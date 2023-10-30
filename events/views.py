@@ -105,18 +105,22 @@ class ParticipantAPI(APIView):
         )
     
     def post(self, request, pk=None, format=None):
+        
         serializer = serializers.ParticipantSerializer(data=request.data)
         print("serializer.is_valid()", serializer.is_valid())
+
         if serializer.is_valid():
             serializer.save()
             return Response(
                 {"stauts": "success", "data": serializer.data},
                 status=status.HTTP_201_CREATED,
             )
+        
         return Response(
             {"stauts": "error", "data": serializer.errors},
             status=status.HTTP_400_BAD_REQUEST,
         )
+ 
     
     def patch(self, request, pk, format=None):
         instance = models.Participant.objects.get(pk=pk)
@@ -158,3 +162,9 @@ class ParticipantAPI(APIView):
         return Response(
             {"msg": "user deleted successfully"}, status=status.HTTP_204_NO_CONTENT
         )
+    
+
+
+
+
+
