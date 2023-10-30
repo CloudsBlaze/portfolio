@@ -18,7 +18,7 @@ class Event(models.Model):
     end_date = models.DateTimeField(default=None, null=True)
     status_type = models.CharField(
         max_length=20,
-        choices=STATUS_TYPE_CHOICES,  
+        choices=STATUS_TYPE_CHOICES,
         default="Postbond"
     )
     organizer = models.CharField(max_length=255,blank=True)
@@ -27,7 +27,7 @@ class Event(models.Model):
 
     def __str__(self):
         return self.title
-    
+
 
 class Participant(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)

@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     'rest_framework',
     "contact_us",
-    "frontend"
+    "frontend",
     "events",
     "image"
 
