@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    {% include '_partiales/headers.html' %}
+    <title>{% block title %}{% endblock %} - Datalytics</title>
+</head>
+
+<body>
+    <div id="content">
+        {% include '_partiales/nav_bar.html' %}
+
+    </div>
+    <div id="cta">
+        {% block main-content %}
+        {% endblock %}
+    </div>
+    <div id="footer">
+        {% include '_partiales/footer.html' %}
+    </div>
+
+    {% include '_partiales/scripts.html' %}
+</body>
+
+</html>

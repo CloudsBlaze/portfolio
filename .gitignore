@@ -160,3 +160,8 @@ cython_debug/
 #.idea/
 
 ./migrations/**.py
+
+./db.sqlite3
+static/node_modules/
+frontend/migrations/
+contact_us/migrations/
