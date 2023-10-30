@@ -97,7 +97,7 @@ class ParticipantAPI(APIView):
                 status=status.HTTP_200_OK,
             )
         
-        instance = get_object_or_404(models.ContactUs, id=pk)
+        instance = get_object_or_404(models.Participant, id=pk)
         serializer = serializers.ParticipantSerializer(instance)
         return Response(
             {"stauts": "success", "data": serializer.data},

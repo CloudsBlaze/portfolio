@@ -8,18 +8,18 @@ from django.contrib.auth.models import User
 
 class Event(models.Model):
     STATUS_TYPE_CHOICES = (
-        ("Postbond", "Postbond"),
-        ("Cancel", "Cancel"),
-        ("Continue", "Continue"),
+        ("1", "Postponed"),
+        ("2", "Cancel"),
+        ("3", "Continue"),
     )
     title = models.CharField(max_length=100)
     description = models.TextField(blank=True,default="")
     start_date = models.DateTimeField(default=None,null=True)
     end_date = models.DateTimeField(default=None, null=True)
-    status_type = models.CharField(
+    status_type =  models.CharField(
         max_length=20,
-        choices=STATUS_TYPE_CHOICES,
-        default="Postbond"
+        choices=STATUS_TYPE_CHOICES,  
+        default="Postponed"
     )
     organizer = models.CharField(max_length=255,blank=True)
     create_date = models.DateTimeField(auto_now=True)
