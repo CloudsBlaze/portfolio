@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 class ContactUs(models.Model):
     id = models.AutoField(primary_key=True)
     first_name = models.CharField(max_length=100)
-    last_name = models.CharField(max_length=100, default=None,blank=True, null=True)
+    last_name = models.CharField(max_length=100, default=None, blank=True, null=True)
     date_of_birth = models.DateField(blank=True, null=True)
     email = models.EmailField()
     phone_number = models.CharField(max_length=15,blank=True, null=True)
@@ -16,5 +16,5 @@ class ContactUs(models.Model):
 
     def __str__(self):
         return self.first_name
-    
+
 

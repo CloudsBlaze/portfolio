@@ -27,7 +27,7 @@ class Event(models.Model):
 
     def __str__(self):
         return self.title
-    
+
 
 class Participant(models.Model):
     name =  models.CharField(max_length=100,default=None, null=True)
