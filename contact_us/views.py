@@ -6,17 +6,13 @@ from rest_framework.views import APIView
 from rest_framework import status
 from rest_framework.renderers import TemplateHTMLRenderer
 
-
-# from .models import ContactUs
-# from .serializers import ContactUsSerializer
-
 import contact_us.models as models
 import contact_us.serializers as serializers
 
 # Create your views here.
 class ContactUsAPI(APIView):
-    renderer_classes = [TemplateHTMLRenderer]
-    template_name = 'profile_list.html'
+    # renderer_classes = [TemplateHTMLRenderer]
+    # template_name = 'profile_list.html'
 
 
     def get(self, request,  pk=None, format=None):
