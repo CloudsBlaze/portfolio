@@ -19,7 +19,7 @@ class Event(models.Model):
     status_type =  models.CharField(
         max_length=20,
         choices=STATUS_TYPE_CHOICES,  
-        default="Postponed"
+        default="1"
     )
     organizer = models.CharField(max_length=255,blank=True)
     create_date = models.DateTimeField(auto_now=True)
