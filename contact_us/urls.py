@@ -1,8 +1,5 @@
 from django.urls import path
-from .views import ContactUsAPI
-
-
-
+from contact_us.views import ContactUsAPI
 
 
 

@@ -8,9 +8,9 @@ class EventAdmin(admin.ModelAdmin):
     search_fields = ('title','organizer')
 
 class ParticipantAdmin(admin.ModelAdmin):
-    list_display = ('user', 'event')
-    list_filter = ('event__title', 'user__username')
-    search_fields = ('event__title', 'user__username')
+    list_display = ('name', 'event')
+    list_filter = ('event__title', 'name')
+    search_fields = ('event__title', 'name')
     
 
 
