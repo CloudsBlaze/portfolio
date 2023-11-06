@@ -53,3 +53,14 @@ class HomeIndex(MainView):
         # print(context)
 
         return Response({"stauts": "success", "data": "context"}, status=status.HTTP_200_OK)
+
+class ContactUsIndex(MainView):
+    renderer_classes = [TemplateHTMLRenderer]
+    template_name = './contact_us/index.html'
+
+    def get(self, request, pk=None, format=None):
+        # main = MainView()
+        # context = main.get(request, pk=None, format=None)
+        # print(context)
+
+        return Response({"stauts": "success", "data": "context"}, status=status.HTTP_200_OK)
