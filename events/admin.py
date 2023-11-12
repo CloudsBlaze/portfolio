@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Event,Participant
+from .models import Event,Participant, EventImage
 
 
 class EventAdmin(admin.ModelAdmin):
@@ -11,11 +11,15 @@ class ParticipantAdmin(admin.ModelAdmin):
     list_display = ('name', 'event')
     list_filter = ('event__title', 'name')
     search_fields = ('event__title', 'name')
-    
 
+
+class EventImagesAdmin(admin.ModelAdmin):
+    list_display = [field.name for field in EventImage._meta.fields]
+    list_filter = [field.name for field in EventImage._meta.fields]
 
 # Register your models here.
 admin.site.register(Event, EventAdmin)
 admin.site.register(Participant, ParticipantAdmin)
+admin.site.register(EventImage, EventImagesAdmin)
 
 

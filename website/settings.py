@@ -44,7 +44,7 @@ INSTALLED_APPS = [
     "contact_us",
     "frontend",
     "events",
-    "image"
+    "image",
 
 ]
 
