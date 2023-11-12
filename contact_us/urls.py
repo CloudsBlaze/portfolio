@@ -4,6 +4,6 @@ from contact_us.views import ContactUsAPI
 
 
 urlpatterns =[
-    path("contact_us/", ContactUsAPI.as_view()),
-    path("contact_us/<int:pk>/", ContactUsAPI.as_view())
+    path("contact-us/", ContactUsAPI.as_view(), name="contact-us"),
+    path("contact-us/<int:pk>/", ContactUsAPI.as_view(), name="contact-us")
 ]

@@ -1,5 +1,5 @@
 from django.db import models
-from django.contrib.auth.models import User
+from image.models import Images
 
 
 
@@ -20,7 +20,7 @@ class Event(models.Model):
     end_date = models.DateTimeField(default=None, null=True)
     status_type =  models.CharField(
         max_length=20,
-        choices=STATUS_TYPE_CHOICES,  
+        choices=STATUS_TYPE_CHOICES,
         default="1"
     )
     organizer = models.CharField(max_length=255,blank=True)
@@ -38,3 +38,10 @@ class Participant(models.Model):
     def __str__(self):
         return f"{self.name}-{self.event.title}"
         # return f"{self.user.username} - {self.event.title}"
+
+
+
+class EventImage(Images):
+    event_images = models.ForeignKey(
+        Event, related_name="event_images", on_delete=models.CASCADE
+    )

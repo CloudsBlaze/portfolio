@@ -12,7 +12,8 @@ from rest_framework import status
 from django.shortcuts import get_object_or_404
 from rest_framework.renderers import TemplateHTMLRenderer
 from django.views.generic.list import ListView
-
+from contact_us.serializers import ContactUsSerializer
+from django.shortcuts import redirect
 # Create your views here.
 
 
@@ -39,7 +40,6 @@ class MainView(APIView):
     #     context["course_catagoery"] = course_catagoery.data
 
     #     return context
-
     pass
 
 
@@ -64,3 +64,53 @@ class ContactUsIndex(MainView):
         # print(context)
 
         return Response({"stauts": "success", "data": "context"}, status=status.HTTP_200_OK)
+
+    def post(self, request, pk=None, format=None):
+            serializer = ContactUsSerializer(data=request.data)
+            print("serializer.is_valid() running from templates", serializer.is_valid())
+            if serializer.is_valid():
+                serializer.save()
+                print("serializer.data", serializer.data)
+                # return redirect('thank-you-page')
+                request.session['name'] = serializer.data['first_name']
+                request.session['message'] = 'Thank you for your kind support and valuable feedback. Your contribution means a lot to us, and it helps us improve our services. We appreciate your trust in us and look forward to serving you in the future.'
+                return redirect('thank-you-page')
+            return Response(
+                {"stauts": "error", "data": serializer.errors},
+                status=status.HTTP_400_BAD_REQUEST,
+            )
+
+
+class ServiceIndex(MainView):
+    renderer_classes = [TemplateHTMLRenderer]
+    template_name = './services/index.html'
+
+    def get(self, request, pk=None, format=None):
+        # main = MainView()
+        # context = main.get(request, pk=None, format=None)
+        # print(context)
+
+        return Response({"stauts": "success", "data": "context"}, status=status.HTTP_200_OK)
+
+class AboutIndex(MainView):
+    renderer_classes = [TemplateHTMLRenderer]
+    template_name = './about_us/index.html'
+
+    def get(self, request, pk=None, format=None):
+        # main = MainView()
+        # context = main.get(request, pk=None, format=None)
+        # print(context)
+
+        return Response({"stauts": "success", "data": "context"}, status=status.HTTP_200_OK)
+
+
+def thank_you(request):
+    name = request.session.get('name', '')
+    message = request.session.get('message', '')
+
+    context = {
+        'name': name,
+        'message': message,
+    }
+    return render(request, './thanks/thank_you.html', context)
+
