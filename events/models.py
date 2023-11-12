@@ -8,9 +8,11 @@ from image.models import Images
 
 class Event(models.Model):
     STATUS_TYPE_CHOICES = (
-        ("1", "Postponed"),
-        ("2", "Cancel"),
-        ("3", "Continue"),
+        ("1", "Scheduled"),
+        ("2", "Postponed"),
+        ("3", "Cancelled"),
+        ("4", "MovedOnline"),
+        ("5", "Rescheduled"),
     )
     title = models.CharField(max_length=100)
     description = models.TextField(blank=True,default="")

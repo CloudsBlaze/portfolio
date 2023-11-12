@@ -165,6 +165,7 @@ image/migrations/
 static/node_modules/
 frontend/migrations/
 contact_us/migrations/
+services/migrations/
 
 *.jpg
 *.jpeg
