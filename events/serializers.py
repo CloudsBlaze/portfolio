@@ -1,10 +1,16 @@
 from rest_framework import serializers
-from .models import Event,Participant
+from events.models import Event,Participant, EventImages
 
 
+
+class EventImageSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = EventImages
+        fields = "__all__"
 
 class ParticipantSerializer(serializers.ModelSerializer):
-     
+
      class Meta:
          model = Participant
          fields = "__all__"
@@ -13,6 +19,7 @@ class EventSerializer(serializers.ModelSerializer):
     # title = serializers.CharField(max_length=100, required=False)
     # start_date = serializers.DateTimeField(required=False)
     participants = ParticipantSerializer(many=True, read_only=True)  # event has many event_Participants
+    event_images = EventImageSerializer(many=True, required=False, allow_null=True)
 
     class Meta:
          model = Event
@@ -27,9 +34,9 @@ class EventSerializer(serializers.ModelSerializer):
             pass
 
         return event
-    
+
     def update(self, instance, validated_data):
-        
+
         instance.title = validated_data.get('title', instance.title)
         instance.description = validated_data.get('description', instance.description)
         instance.start_date = validated_data.get('start_date', instance.start_date)
