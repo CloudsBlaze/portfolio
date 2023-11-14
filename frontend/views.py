@@ -13,15 +13,18 @@ from django.shortcuts import get_object_or_404
 from rest_framework.renderers import TemplateHTMLRenderer
 from django.views.generic.list import ListView
 from contact_us.serializers import ContactUsSerializer
+
+import services.models as ServicesModels
+import services.serializers as ServicesSerializers
 from django.shortcuts import redirect
 # Create your views here.
 
 
 class MainView(APIView):
 
-    # def get(self, request, pk=None, format=None):
-    #     course_raw =  courses_models.Course.objects.all()
-    #     courses = courses_serializers.CourseSerializer(course_raw, many=True)
+    def get(self, request, pk=None, format=None):
+        services_raw =  ServicesModels.ServiceCategory.objects.all()
+        service_catgories = ServicesSerializers.ServiceCategorySerializer(services_raw, many=True)
 
     #     events_raw =  events_models.Event.objects.all()
     #     events = events_serializers.EventSerializer(events_raw, many=True)
@@ -33,14 +36,14 @@ class MainView(APIView):
     #     course_catagoery_raw =  courses_models.CourseCategory.objects.all()
     #     course_catagoery = courses_serializers.CourseCategorySerializer(course_catagoery_raw, many=True)
 
-    #     context = {}
-    #     context['courses'] = courses.data
+        context = {}
+        context['service_catgories'] = service_catgories.data
     #     context["events"] = events.data
     #     context["clients"] = clients.data
     #     context["course_catagoery"] = course_catagoery.data
 
-    #     return context
-    pass
+        return context
+        pass
 
 
 class HomeIndex(MainView):
@@ -48,22 +51,20 @@ class HomeIndex(MainView):
     template_name = './frontend/index.html'
 
     def get(self, request, pk=None, format=None):
-        # main = MainView()
-        # context = main.get(request, pk=None, format=None)
-        # print(context)
+        main = MainView()
+        context = main.get(request, pk=None, format=None)
 
-        return Response({"stauts": "success", "data": "context"}, status=status.HTTP_200_OK)
+        return Response({"stauts": "success", "data": context}, status=status.HTTP_200_OK)
 
 class ContactUsIndex(MainView):
     renderer_classes = [TemplateHTMLRenderer]
     template_name = './contact_us/index.html'
 
     def get(self, request, pk=None, format=None):
-        # main = MainView()
-        # context = main.get(request, pk=None, format=None)
-        # print(context)
+        main = MainView()
+        context = main.get(request, pk=None, format=None)
 
-        return Response({"stauts": "success", "data": "context"}, status=status.HTTP_200_OK)
+        return Response({"stauts": "success", "data": context}, status=status.HTTP_200_OK)
 
     def post(self, request, pk=None, format=None):
             serializer = ContactUsSerializer(data=request.data)
@@ -86,22 +87,20 @@ class ServiceIndex(MainView):
     template_name = './services/index.html'
 
     def get(self, request, pk=None, format=None):
-        # main = MainView()
-        # context = main.get(request, pk=None, format=None)
-        # print(context)
+        main = MainView()
+        context = main.get(request, pk=None, format=None)
 
-        return Response({"stauts": "success", "data": "context"}, status=status.HTTP_200_OK)
+        return Response({"stauts": "success", "data": context}, status=status.HTTP_200_OK)
 
 class AboutIndex(MainView):
     renderer_classes = [TemplateHTMLRenderer]
     template_name = './about_us/index.html'
 
     def get(self, request, pk=None, format=None):
-        # main = MainView()
-        # context = main.get(request, pk=None, format=None)
-        # print(context)
+        main = MainView()
+        context = main.get(request, pk=None, format=None)
 
-        return Response({"stauts": "success", "data": "context"}, status=status.HTTP_200_OK)
+        return Response({"stauts": "success", "data": context}, status=status.HTTP_200_OK)
 
 
 def thank_you(request):

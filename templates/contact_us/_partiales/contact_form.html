@@ -1,41 +1,45 @@
 {% load static %}
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <h1>Contact Us</h1>
-            <form method="POST" action="{% url 'contact-submit' %}">
-                {% csrf_token %}
-                <div class="mb-3 row">
-                    <div class="col-md-6">
-                        <label for="first_name" class="form-label">First Name</label>
-                        <input type="text" class="form-control" id="first_name" name="first_name"
-                            placeholder="first name" required>
+<Section class="bg-light mt-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <h1>Contact Us</h1>
+                <form method="POST" action="{% url 'contact-submit' %}">
+                    {% csrf_token %}
+                    <div class="mb-3 row">
+                        <div class="col-md-6">
+                            <label for="first_name" class="form-label">First Name</label>
+                            <input type="text" class="form-control" id="first_name" name="first_name"
+                                placeholder="first name" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="last_name" class="form-label">Last Name</label>
+                            <input type="text" class="form-control" id="last_name" name="last_name"
+                                placeholder="last name">
+                        </div>
                     </div>
-                    <div class="col-md-6">
-                        <label for="last_name" class="form-label">Last Name</label>
-                        <input type="text" class="form-control" id="last_name" name="last_name" placeholder="last name">
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="your's email"
+                            required>
                     </div>
-                </div>
-                <div class="mb-3">
-                    <label for="email" class="form-label">Email</label>
-                    <input type="email" class="form-control" id="email" name="email" placeholder="your's email"
-                        required>
-                </div>
-                <div class="mb-3">
-                    <label for="phone_number" class="form-label">Phone Number</label>
-                    <!-- <input type="text" class="form-control" id="phone_number" name="phone_number"> -->
-                    <input type="tel" class="form-control" id="phone_number" name="phone_number"
-                        pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="123-456-7890" required>
-                    <small id="phoneHelp" class="form-text text-muted">Please enter your phone number in the format:
-                        123-456-7890</small>
-                </div>
-                <div class="mb-3">
-                    <label for="description" class="form-label">Description</label>
-                    <textarea class="form-control" id="description" name="description"
-                        placeholder="Add your thoughts"></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
-            </form>
+                    <div class="mb-3">
+                        <label for="phone_number" class="form-label">Phone Number</label>
+                        <!-- <input type="text" class="form-control" id="phone_number" name="phone_number"> -->
+                        <input type="tel" class="form-control" id="phone_number" name="phone_number"
+                            pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="123-456-7890" required>
+                        <small id="phoneHelp" class="form-text text-muted">Please enter your phone number in the format:
+                            123-456-7890</small>
+                    </div>
+                    <div class="mb-3">
+                        <label for="description" class="form-label">Description</label>
+                        <textarea class="form-control" id="description" name="description"
+                            placeholder="Add your thoughts"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
         </div>
     </div>
-</div>
+
+</Section>
