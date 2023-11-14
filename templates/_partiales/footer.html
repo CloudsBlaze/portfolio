@@ -1,8 +1,8 @@
-<div class="primery-bg-color">
+<div class="brand-gradient">
 	<div class="mx-5">
 		<footer class="row row-cols-5 p-5 border-top">
 			<div class="col">
-				<a href="/" class="d-flex align-items-center mb-3 text-decoration-none primery-text-inverted">
+				<a href="/" class="d-flex align-items-center mb-3 text-decoration-none text-dark">
 					Clouds Blaze
 					<svg class="bi me-2" width="40" height="32">
 						<use xlink:href="#bootstrap" />
@@ -19,63 +19,49 @@
 			<div class="col">
 				<h5>Pages</h5>
 				<ul class="nav flex-column ">
-					<li class="nav-item mb-2"><a href="/"
-							class="nav-link p-0 text-decoration-none primery-text-inverted">Home</a>
+					<li class="nav-item mb-2"><a href="/" class="nav-link p-0 text-decoration-none text-dark">Home</a>
 					</li>
 					<li class="nav-item mb-2"><a href="/services"
-							class="nav-link p-0 text-decoration-none primery-text-inverted">Services</a>
+							class="nav-link p-0 text-decoration-none text-dark">Services</a>
 					</li>
-					<li class="nav-item mb-2"><a href="#"
-							class="nav-link p-0 text-decoration-none primery-text-inverted">Pricing</a>
-					</li>
-					<li class="nav-item mb-2"><a href="#"
-							class="nav-link p-0 text-decoration-none primery-text-inverted">FAQs</a>
+					<li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-decoration-none text-dark">Contact
+							us</a>
 					</li>
 					<li class="nav-item mb-2"><a href="/about-us"
-							class="nav-link p-0 text-decoration-none primery-text-inverted">About
-							us</a></li>
-				</ul>
-			</div>
-
-			<div class="col primery-text-inverted">
-				<h5>Section</h5>
-				<ul class="nav flex-column">
-					<li class="nav-item mb-2"><a href="/"
-							class="nav-link p-0 text-decoration-none primery-text-inverted ">Home</a>
-					</li>
-					<li class="nav-item mb-2"><a href="/services"
-							class="nav-link p-0 text-decoration-none primery-text-inverted ">Services</a>
-					</li>
-					<li class="nav-item mb-2"><a href="#"
-							class="nav-link p-0 text-decoration-none primery-text-inverted ">Pricing</a>
-					</li>
-					<li class="nav-item mb-2"><a href="#"
-							class="nav-link p-0 text-decoration-none primery-text-inverted ">FAQs</a>
-					</li>
-					<li class="nav-item mb-2"><a href="/about-us"
-							class="nav-link p-0 text-decoration-none primery-text-inverted ">About
+							class="nav-link p-0 text-decoration-none text-dark">About
 							us</a></li>
 				</ul>
 			</div>
 
 			<div class="col">
-				<h5>Section</h5>
+				<h5>Services</h5>
+				<ul class="nav flex-column">
+					{% for d in data.service_catgories|slice:":5" %}
+					<li class="nav-item mb-2"><a href="/"
+							class="nav-link p-0 text-decoration-none text-dark ">{{d.name}}</a>
+					</li>
+					{% endfor %}
+				</ul>
+			</div>
+
+			<div class="col">
+				<h5>Contact Us</h5>
 				<ul class="nav flex-column ">
 					<li class="nav-item mb-2"><a href="/"
-							class="nav-link p-0 text-decoration-none primery-text-inverted">Home</a>
+							class="nav-link p-0 text-decoration-none text-dark">sales@diginatives.io</a>
 					</li>
 					<li class="nav-item mb-2"><a href="/services"
-							class="nav-link p-0 text-decoration-none primery-text-inverted">Services</a>
+							class="nav-link p-0 text-decoration-none text-dark">career@diginatives.io</a>
 					</li>
 					<li class="nav-item mb-2"><a href="#"
-							class="nav-link p-0 text-decoration-none primery-text-inverted">Pricing</a>
+							class="nav-link p-0 text-decoration-none text-dark">info@diginatives.io</a>
 					</li>
-					<li class="nav-item mb-2"><a href="#"
-							class="nav-link p-0 text-decoration-none primery-text-inverted">FAQs</a>
+					<li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-decoration-none text-dark">+1 (714)
+							820-9946</a>
 					</li>
 					<li class="nav-item mb-2"><a href="/about-us"
-							class="nav-link p-0 text-decoration-none primery-text-inverted">About
-							us</a></li>
+							class="nav-link p-0 text-decoration-none text-dark">Suite 200, MainSt. Milpitas, CA 96035,
+							USA</a></li>
 				</ul>
 			</div>
 		</footer>

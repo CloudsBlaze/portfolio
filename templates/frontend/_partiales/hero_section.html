@@ -1,61 +1,131 @@
 {% load static %}
-<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-inner">
-        <div class="carousel-item active ">
-            <img src="{% static '\img\frontend\home_banner.jpg'%}" class="d-block w-100" alt="..."
-                style="opacity: 0.7;">
-            <!-- <img src="https://dummyimage.com/1440x700" class="d-block w-100" alt="..."> -->
-            <div class=" primery-text-inverted carousel-caption ">
-                <h1 class="fw-bold text-dark">Where innovation and elegance unite to propel businesses</h1>
-                <p class="text-black-50">Our unique blend of cutting-edge innovation and refined elegance creates a
-                    dynamic environment where
-                    your business can thrive. Discover the perfect harmony of technology and sophistication, elevating
-                    your brand to new heights.</p>
-                <div class="col-lg-6 mx-auto mt-5">
-                    <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-                        <button type="button" class="btn btn-secondary btn-lg px-4 gap-3">Contact us</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="carousel-item">
-            <img src="{% static '\img\frontend\home_banner_2.jpg'%}" class="d-block w-100" alt="..."
-                style="opacity: 0.7;">
-            <div class="primery-text-inverted carousel-caption ">
-                <h1 class="fw-bold text-dark">Driving Innovation, Empowering Growth, Delivering Results.</h1>
-                <p class="text-black-50">Through relentless innovation, strategic empowerment, and a proven track
-                    record of delivering
-                    tangible results, we are your trusted partner in achieving success that stands the test of time.</p>
-                <div class="col-lg-6 mx-auto mt-5">
-                    <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-                        <!-- <button type="button" class="btn btn-secondary btn-lg px-4 gap-3">Contact us</button> -->
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="carousel-item">
-            <img src="{% static '\img\frontend\home_banner.jpg'%}" class="d-block w-100" alt="..."
-                style="opacity: 0.7;">
-            <div class="primery-text-inverted carousel-caption  ">
-                <h1 class="fw-bold text-dark">Strategic Solutions for Sustainable Success.</h1>
-                <p class="text-black-50">We offer tailored strategies and expert guidance to help your business thrive
-                    in an ever-evolving
-                    market. Our commitment to sustainable growth ensures your success today and for generations to come.
-                </p>
-                <div class="col-lg-6 mx-auto mt-5">
-                    <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-                        <!-- <button type="button" class="btn btn-secondary btn-lg px-4 gap-3">Contact us</button> -->
-                    </div>
-                </div>
+<section class="hero brand-gradient py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 offset-lg-2">
+                <h1 class="display-4">Inovation meets technology</h1>
+                <p class="lead">We pride ourselves on being your trusted partner in navigating the complex landscape of
+                    digital transformation</p>
+                <a href="{% url 'contact-submit' %}" class="btn btn-light btn-lg mt-3">Contact Us</a>
             </div>
         </div>
     </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-    </button>
-</div>
+</section>
+
+<!-- Services Section -->
+<section class="services py-4">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center mb-3">
+                <h2 class="section-heading">Services We Offer</h2>
+                <p class="section-subheading">Empowering You with Exceptional Services</p>
+            </div>
+        </div>
+        <div class="row">
+            {% for d in data.service_catgories|slice:":3" %}
+            <div class="col-lg-4 service-item p-5 gradient-border-bg">
+                <div class="text-center mb-4">
+                    <img src="{% static '/img/icons/coding.png'%}" class="thubmnails-small icon"
+                        alt="Web Development Icon">
+                    <h3>{{ d.name }}</h3>
+                    <p>{{d.description}}</p>
+                </div>
+            </div>
+            {% endfor %}
+            <!-- <div class="col-lg-4 service-item p-5 gradient-border-bg">
+                <div class="text-center mb-4">
+                    <img src="{% static '/img/icons/coding.png'%}" class="thubmnails-small icon"
+                        alt="Web Development Icon">
+                    <h3>Web Development</h3>
+                    <p>We create responsive and user-friendly websites tailored to your needs.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 service-item p-5 gradient-border-bg">
+                <div class="text-center mb-4">
+                    <img src="{% static '/img/icons/verified.png'%}" class="thubmnails-small icon"
+                        alt="Clouds & Sercurity icon">
+
+                    <h3>Clouds and Sercurity</h3>
+                    <p>Our experts design and develop custom software solutions for your business.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 service-item p-5 gradient-border-bg">
+                <div class="text-center mb-4">
+                    <img src="{% static '/img/icons/coding.png'%}" class="thubmnails-small icon"
+                        alt="Web Development Icon">
+                    <h3>IT Consulting</h3>
+                    <p>We provide strategic IT consulting to optimize your technology infrastructure.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 service-item p-5 gradient-border-bg">
+                <div class="text-center mb-4">
+                    <img src="{% static '/img/icons/coding.png'%}" class="thubmnails-small icon"
+                        alt="Web Development Icon">
+                    <h3>Web Development</h3>
+                    <p>We create responsive and user-friendly websites tailored to your needs.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 service-item p-5 gradient-border-bg">
+                <div class="text-center mb-4">
+                    <img src="{% static '/img/icons/coding.png'%}" class="thubmnails-small icon"
+                        alt="Web Development Icon">
+                    <h3>Web Development</h3>
+                    <p>We create responsive and user-friendly websites tailored to your needs.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 service-item p-5 gradient-border-bg">
+                <div class="text-center mb-4">
+                    <img src="{% static '/img/icons/coding.png'%}" class="thubmnails-small icon"
+                        alt="Web Development Icon">
+                    <h3>Web Development</h3>
+                    <p>We create responsive and user-friendly websites tailored to your needs.</p>
+                </div>
+            </div> -->
+        </div>
+        <!-- <div class="text-center">
+            <a href="#contact" class="btn btn-light btn-lg mt-3 gradient-btn brand-gradient text-white">All Services</a>
+        </div> -->
+    </div>
+</section>
+
+<section class="services py-4 bg-light">
+    <div class="container">
+        <div class="row">
+            <!-- Content Column -->
+            <div class="col-md-6">
+                <h2>Engagement Model</h2>
+
+                <!-- Offshore Development Services -->
+                <div class="mb-4 gradient mt-4">
+                    <h4>Offshore Development Services</h4>
+                    <p>Our staff augmentation model is intended to help companies find the right skills for their
+                        project.
+                    </p>
+                </div>
+
+                <!-- Fixed Price Project -->
+                <div class="mb-4 gradient">
+                    <h4>Fixed Price Project</h4>
+                    <p>The project-based model is designed to help you get your product built from ideation to
+                        deployment by
+                        a team of expert software engineering consultants.</p>
+                </div>
+
+                <!-- Dedicated Team -->
+                <div class="gradient">
+                    <h4>Dedicated Team</h4>
+                    <p>Our team of developers is highly qualified and dedicated to delivering quality development
+                        services
+                        to clients.</p>
+                </div>
+            </div>
+
+            <!-- Image Column -->
+            <div class="col-md-6">
+                <img src="{% static '/img/frontend/pexels-anna-shvets-5325104.jpg'%}" alt="Engagement Model Image"
+                    class="img-fluid">
+            </div>
+        </div>
+    </div>
+
+</section>
