@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Service,ServiceCategory
+from .models import Service,ServiceCategory,ServiceImage
 
 
 # Register your models here.
@@ -14,8 +14,14 @@ class ServiceCategoryAdmin(admin.ModelAdmin):
     list_display = ('name', 'description', 'create_date', 'update_date')
     search_fields = ('name',)
 
+class ServiceImageAdmin(admin.ModelAdmin):
+    list_display = [field.name for field in ServiceImage._meta.fields]
+    list_filter = [field.name for field in ServiceImage._meta.fields]
+
+
 
 
 
 admin.site.register(Service, ServiceAdmin)
 admin.site.register(ServiceCategory, ServiceCategoryAdmin)
+admin.site.register(ServiceImage, ServiceImageAdmin)
