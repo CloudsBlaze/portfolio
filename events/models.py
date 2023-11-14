@@ -24,7 +24,7 @@ class Event(models.Model):
         default="1"
     )
     organizer = models.CharField(max_length=255,blank=True)
-    create_date = models.DateTimeField(auto_now=True)
+    create_date = models.DateTimeField(auto_now_add=True)
     update_date = models.DateTimeField(auto_now=True)
 
     def __str__(self):
