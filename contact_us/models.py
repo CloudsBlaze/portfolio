@@ -9,7 +9,7 @@ class ContactUs(models.Model):
     email = models.EmailField()
     phone_number = models.CharField(max_length=15,blank=True, null=True)
     description = models.TextField(blank=True, null=True)
-    create_date = models.DateTimeField(auto_now=True)
+    create_date = models.DateTimeField(auto_now_add=True)
     update_date = models.DateTimeField(auto_now=True)
 
     def __str__(self):
