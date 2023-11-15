@@ -3,7 +3,7 @@
     <div class="container">
         {% for d in data.service_catgories %}
         <h2 class="section-heading text-center mb-5">{{ d.name }}</h2>
-        <p>{{d.description}}</p>
+        <p class="text-center">{{d.description}}</p>
         <div class="row">
             {% for sub_d in d.service_category %}
             <div class="col-lg-4 mb-4">
