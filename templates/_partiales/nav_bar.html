@@ -1,8 +1,9 @@
 {% load static %}
-<nav class="navbar navbar-expand-lg bg-light comman-gradient">
+<nav class="navbar navbar-expand-lg bg-light text-light"
+    style="background-color: #272643 !important; color: aliceblue;">
     <div class="container-fluid mx-5">
-        <a class="navbar-brand" href="{% url 'home' %}">
-            <img src="{% static 'img/logo/clouds_blase_logo.png' %}" alt="CloudsBlaze" style="max-height: 30px;">
+        <a class="navbar-brand text-light" href="{% url 'home' %}">
+            <img src="{% static 'img/logo/logo_white.png' %}" alt="CloudsBlaze" style="max-height: 30px;">
             CloudsBlaze
         </a>
         <div>
@@ -14,13 +15,13 @@
             <div class="collapse navbar-collapse " id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="{% url 'home' %}">Home</a>
+                        <a class="nav-link text-light" aria-current="page" href="{% url 'home' %}">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="{% url 'service' %}">Services</a>
+                        <a class="nav-link text-light" aria-current="page" href="{% url 'service' %}">Services</a>
                     </li>
                     <!-- <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="/courses" role="button" data-bs-toggle="dropdown"
+                        <a class="nav-link text-light dropdown-toggle" href="/courses" role="button" data-bs-toggle="dropdown"
                             aria-expanded="false">
                             Courses
                         </a>
@@ -35,10 +36,10 @@
                         </ul>
                     </li> -->
                     <!-- <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="/events">Events</a>
+                        <a class="nav-link text-light" aria-current="page" href="/events">Events</a>
                     </li> -->
                     <!-- <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="/events/" role="button" data-bs-toggle="dropdown"
+                        <a class="nav-link text-light dropdown-toggle" href="/events/" role="button" data-bs-toggle="dropdown"
                             aria-expanded="false">
                             Events
                         </a>
@@ -53,10 +54,11 @@
                         </ul>
                     </li> -->
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="{% url 'aboutus' %}">About us</a>
+                        <a class="nav-link text-light" aria-current="page" href="{% url 'aboutus' %}">About us</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="{% url 'contact-submit' %}">Contact us</a>
+                        <a class="nav-link text-light" aria-current="page" href="{% url 'contact-submit' %}">Contact
+                            us</a>
                     </li>
 
                 </ul>
