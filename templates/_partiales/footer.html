@@ -8,7 +8,7 @@
 						<use xlink:href="#bootstrap" />
 					</svg>
 				</a>
-				<p class="text-light">&copy; 2010 - 2022</p>
+				<p class="text-light">&copy; 2010 - {% now "Y" %}</p>
 				<p class="text-light">Privacy -Terms</p>
 			</div>
 
@@ -19,15 +19,17 @@
 			<div class="col">
 				<h5 class="text-light">Pages</h5>
 				<ul class="nav flex-column ">
-					<li class="nav-item mb-2"><a href="/" class="nav-link p-0 text-decoration-none text-light">Home</a>
+					<li class="nav-item mb-2"><a href="{% url 'home' %}"
+							class="nav-link p-0 text-decoration-none text-light">Home</a>
 					</li>
-					<li class="nav-item mb-2"><a href="/services"
+					<li class="nav-item mb-2"><a href="{% url 'service' %}"
 							class="nav-link p-0 text-decoration-none text-light">Services</a>
 					</li>
-					<li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-decoration-none text-light">Contact
+					<li class="nav-item mb-2"><a href="{% url 'contact-submit' %}"
+							class="nav-link p-0 text-decoration-none text-light">Contact
 							us</a>
 					</li>
-					<li class="nav-item mb-2"><a href="/about-us"
+					<li class="nav-item mb-2"><a href="{% url 'aboutus' %}"
 							class="nav-link p-0 text-decoration-none text-light">About
 							us</a></li>
 				</ul>
@@ -37,7 +39,7 @@
 				<h5 class="text-light">Services</h5>
 				<ul class="nav flex-column">
 					{% for d in data.service_catgories|slice:":5" %}
-					<li class="nav-item mb-2"><a href="/"
+					<li class="nav-item mb-2"><a href="{% url 'service' %}"
 							class="nav-link p-0 text-decoration-none text-light ">{{d.name}}</a>
 					</li>
 					{% endfor %}
@@ -47,21 +49,18 @@
 			<div class="col">
 				<h5 class="text-light">Contact Us</h5>
 				<ul class="nav flex-column ">
-					<li class="nav-item mb-2"><a href="/"
-							class="nav-link p-0 text-decoration-none text-light">sales@diginatives.io</a>
+					<li class="nav-item mb-2"><a href="mailto:info@cloudsblaze.com"
+							class="nav-link p-0 text-decoration-none text-light">info@cloudsblaze.com</a>
 					</li>
-					<li class="nav-item mb-2"><a href="/services"
-							class="nav-link p-0 text-decoration-none text-light">career@diginatives.io</a>
+					<li class="nav-item mb-2"><a href="https://wa.me/+923349935944"
+							class="nav-link p-0 text-decoration-none text-light">+92
+							334-993-5944</a>
 					</li>
-					<li class="nav-item mb-2"><a href="#"
-							class="nav-link p-0 text-decoration-none text-light">info@diginatives.io</a>
-					</li>
-					<li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-decoration-none text-light">+1 (714)
-							820-9946</a>
-					</li>
-					<li class="nav-item mb-2"><a href="/about-us"
-							class="nav-link p-0 text-decoration-none text-light">Suite 200, MainSt. Milpitas, CA 96035,
-							USA</a></li>
+					<li class="nav-item mb-2"><a
+							href="https://www.google.com/maps/place/Tricon+Marketing/@31.4351103,74.3223867,15z/data=!4m2!3m1!1s0x0:0xa33b53cfd8d58bf4?sa=X&ved=2ahUKEwjW7N_lgNOCAxUGT2wGHWcYNFwQ_BJ6BAhCEAA"
+							target="_blank" class="nav-link p-0 text-decoration-none text-light">112/15 Quaid-e-Azam
+							Boulevard,
+							Quaid-e-Azam Industrial Estate, Lahore, Punjab 54000</a></li>
 				</ul>
 			</div>
 		</footer>
