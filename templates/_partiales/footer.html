@@ -2,7 +2,8 @@
 	<div class="mx-5">
 		<footer class="row row-cols-5 p-5 border-top">
 			<div class="col">
-				<a href="/" class="d-flex align-items-center mb-3 text-decoration-none text-light">
+				<a href="{% url 'home' %}" alt="Clouds Blaze logo"
+					class="d-flex align-items-center mb-3 text-decoration-none text-light">
 					Clouds Blaze
 					<svg class="bi me-2" width="40" height="32">
 						<use xlink:href="#bootstrap" />
@@ -19,17 +20,17 @@
 			<div class="col">
 				<h5 class="text-light">Pages</h5>
 				<ul class="nav flex-column ">
-					<li class="nav-item mb-2"><a href="{% url 'home' %}"
+					<li class="nav-item mb-2"><a href="{% url 'home' %}" alt="Home page"
 							class="nav-link p-0 text-decoration-none text-light">Home</a>
 					</li>
-					<li class="nav-item mb-2"><a href="{% url 'service' %}"
+					<li class="nav-item mb-2"><a href="{% url 'service' %}" alt="Services page"
 							class="nav-link p-0 text-decoration-none text-light">Services</a>
 					</li>
-					<li class="nav-item mb-2"><a href="{% url 'contact-submit' %}"
+					<li class="nav-item mb-2"><a href="{% url 'contact-submit' %}" alt="Contact us page"
 							class="nav-link p-0 text-decoration-none text-light">Contact
 							us</a>
 					</li>
-					<li class="nav-item mb-2"><a href="{% url 'aboutus' %}"
+					<li class="nav-item mb-2"><a href="{% url 'aboutus' %}" alt="About us page"
 							class="nav-link p-0 text-decoration-none text-light">About
 							us</a></li>
 				</ul>
