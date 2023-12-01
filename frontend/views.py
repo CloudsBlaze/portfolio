@@ -17,6 +17,8 @@ from contact_us.serializers import ContactUsSerializer
 import services.models as ServicesModels
 import services.serializers as ServicesSerializers
 from django.shortcuts import redirect
+from django.views.decorators.http import require_GET
+from django.http import HttpResponse
 # Create your views here.
 
 
@@ -112,4 +114,13 @@ def thank_you(request):
         'message': message,
     }
     return render(request, './thanks/thank_you.html', context)
+
+
+
+@require_GET
+def robots_txt(request):
+    robots_txt_content = """\
+    User-Agent: *
+    """
+    return HttpResponse(robots_txt_content, content_type="text/plain")
 
