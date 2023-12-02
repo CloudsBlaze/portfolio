@@ -4,8 +4,8 @@
     {% for d in data.service_catgories %}
     <div class="{% cycle 'odd' 'even' %}">
         <div class="container py-4">
-            <h2 class="section-heading text-center mb-5">{{ d.name }}</h2>
-            <p class="text-center">{{d.description}}</p>
+            <h2 class="section-heading text-center mb-2">{{ d.name }}</h2>
+            <p class="text-center mb-5">{{d.description}}</p>
             <div class="row">
                 {% for sub_d in d.service_category %}
                 <div class="col-lg-4 mb-4">
