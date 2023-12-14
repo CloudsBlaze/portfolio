@@ -1,73 +1,42 @@
 {% load static %}
-<nav class="navbar navbar-expand-lg bg-light text-light"
-    style="background-color: #272643 !important; color: aliceblue;">
-    <div class="container-fluid mx-5">
-        <a class="navbar-brand text-light" href="{% url 'home' %}" alt="Home page">
-            <img src="{% static 'img/logo/logo_white.png' %}" alt="CloudsBlaze" style="max-height: 30px;">
-            CloudsBlaze
-        </a>
-        <div>
-            <button class="navbar-toggler " type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse " id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link text-light" aria-current="page" href="{% url 'home' %}"
-                            alt="Home page">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-light" aria-current="page" href="{% url 'service' %}"
-                            alt="Service page">Services</a>
-                    </li>
-                    <!-- <li class="nav-item dropdown">
-                        <a class="nav-link text-light dropdown-toggle" href="/courses" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                            Courses
-                        </a>
-                        <ul class="dropdown-menu">
-                            {% for d in data.course_catagoery|slice:":6" %}
-                            <li><a class="dropdown-item" href="#">{{d.name}}</a></li>
-                            {% endfor %}
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="#">Others</a></li>
-                        </ul>
-                    </li> -->
-                    <!-- <li class="nav-item">
-                        <a class="nav-link text-light" aria-current="page" href="/events">Events</a>
-                    </li> -->
-                    <!-- <li class="nav-item dropdown">
-                        <a class="nav-link text-light dropdown-toggle" href="/events/" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                            Events
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="/events/event-catagories/">Event Catagoery</a></li>
-                            <li><a class="dropdown-item" href="/events/up-comming-events/">Up Comming Events</a></li>
-                            <li><a class="dropdown-item" href="/events/past-events/">Past Events</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="/events/all-events/">All Events</a></li>
-                        </ul>
-                    </li> -->
-                    <li class="nav-item">
-                        <a class="nav-link text-light" aria-current="page" href="{% url 'aboutus' %}"
-                            alt="About us page">About us</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-light" aria-current="page" href="{% url 'contact-submit' %}"
-                            alt="Contact us page">Contact
-                            us</a>
-                    </li>
-
-                </ul>
+<nav class="navbar navbar-expand">
+    <div class="container">
+        <a class="navbar-brand" href="{% url 'home' %}">
+            <div class="d-flex flex-row gap-2 align-items-center  ">
+                <img src="{% static 'img/logo/logo-color.png' %}" alt="Logo" height="35"
+                    class="d-inline-block align-text-top">
+                <div class="d-flex flex-column">
+                    <h2 class="fw-bold fs-4 logo-color mb-0" style="font-size: 1.8rem !important">CloudsBlaze</h2>
+                    <span class="fw-1 fs-6 text-muted lh-1" style="font-size: 0.8rem !important">Innovate . Incubate
+                        .
+                        Intigrate</span>
+                </div>
             </div>
 
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Features</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Pricing</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+                </li>
+            </ul>
+        </div>
+        <div class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
         </div>
 
     </div>
