@@ -88,3 +88,14 @@
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
     z-index: 1;
   }
+
+.carousel-caption {
+    position: absolute;
+    right: 15%;
+    bottom: 10.25rem;
+    left: 15%;
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+    color: #fff;
+    text-align: center;
+}
