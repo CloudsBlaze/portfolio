@@ -75,10 +75,37 @@
 }
 
 .hero-section{
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.46) 0%, rgba(0, 0, 0, 0.46) 100%), url('./img/banners/banner-home.jpg');
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.46) 0%, rgba(0, 0, 0, 0.46) 100%);
+    background-size: cover;
+    background-position: center;
+    color: #fff; /* Text color on top of the background image */
+    text-align: center;
+    padding: 100px 0; /* Adjust the padding as needed */
+    height: 100%;
 }
 
-.carousel-item::before {
+.home-banner-img {
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.46) 0%, rgba(0, 0, 0, 0.46) 100%),url('../img/banners/banner-home.jpg');
+    background-size: cover;
+    background-position: center;
+    color: #fff; /* Text color on top of the background image */
+    text-align: center;
+    padding: 100px 0; /* Adjust the padding as needed */
+    height: 100%;
+}
+
+.service-banner-img {
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.46) 0%, rgba(0, 0, 0, 0.46) 100%), url('../img/banners/banner-service.jpg');
+    background-size: cover;
+    background-position: center;
+    color: #fff; /* Text color on top of the background image */
+    text-align: center;
+    padding: 100px 0; /* Adjust the padding as needed */
+    height: 100%;
+}
+}
+
+/* .carousel-item::before {
     content: '';
     position: absolute;
     top: 0;
@@ -87,15 +114,15 @@
     height: 100%;
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
     z-index: 1;
-  }
+  } */
 
-.carousel-caption {
+/* .carousel-caption {
     position: absolute;
     right: 15%;
-    bottom: 10.25rem;
+    bottom: 15%;
     left: 15%;
     padding-top: 1.25rem;
     padding-bottom: 1.25rem;
     color: #fff;
     text-align: center;
-}
+} */
