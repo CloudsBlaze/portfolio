@@ -9,7 +9,7 @@
                     <h2 class="fw-bold fs-4 logo-color mb-0" style="font-size: 1.8rem !important">CloudsBlaze</h2>
                     <span class="fw-1 fs-6 text-muted lh-1" style="font-size: 0.8rem !important">Innovate . Incubate
                         .
-                        Intigrate</span>
+                        Integrate</span>
                 </div>
             </div>
         </a>
@@ -26,18 +26,17 @@
                     <a class="nav-link" href="{% url 'service' %}">Services</a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                        aria-expanded="false">
-                        Dropdown
+                    <a class="nav-link dropdown-toggle" href="{% url 'service' %}" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        Services
                     </a>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Action</a></li>
-                        <li><a class="dropdown-item" href="#">Another action</a></li>
-                        <li>
-                            <hr class="dropdown-divider">
-                        </li>
-                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+
+                    <ul class="dropdown-menu" aria-labelledby="navbarDarkDropdownMenuLink">
+                        {% for d in data.service_catgories %}
+                        <li><a class="dropdown-item dropend" href="#">{{ d.name }}</a></li>
+                        {% endfor %}
                     </ul>
+
                 </li>
                 <li class="nav-item">
                     <a class="nav-link disabled" aria-disabled="true">Disabled</a>
