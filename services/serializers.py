@@ -1,11 +1,12 @@
 from rest_framework import serializers
-from .models import Service, ServiceCategory,ServiceImage
+from .models import Service, ServiceCategory, ServiceImage
+
 
 class ServiceImageSerializer(serializers.ModelSerializer):
-
     class Meta:
         model = ServiceImage
         fields = "__all__"
+
 
 class ServiceSerializer(serializers.ModelSerializer):
     # service_category = ServiceCategorySerializer()
@@ -31,8 +32,6 @@ class ServiceSerializer(serializers.ModelSerializer):
     #         service_category, created = ServiceCategory.objects.get_or_create(name=name,
     #         defaults={'description': description})
 
-
-
     #         instance.name = validated_data.get('name', instance.name)
     #         instance.description = validated_data.get('description', instance.description)
     #         instance.service_category = service_category  # Update the service_category
@@ -43,6 +42,7 @@ class ServiceSerializer(serializers.ModelSerializer):
 
 class ServiceCategorySerializer(serializers.ModelSerializer):
     service_category = ServiceSerializer(many=True, required=True)
+
     class Meta:
         model = ServiceCategory
         fields = "__all__"
