@@ -16,16 +16,16 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from django.urls import include,re_path
+from django.urls import include, re_path
 from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path('', include('events.urls')),
-    path('', include('image.urls')),
-    path('', include('frontend.urls')),
-    path('', include('contact_us.urls')),
-    path('', include('services.urls'))
+    path("", include("events.urls")),
+    path("", include("image.urls")),
+    path("", include("frontend.urls")),
+    path("", include("contact_us.urls")),
+    path("api/", include("services.urls"))
     # path('api/contact-us', include('contact_us.urls')),
-]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
