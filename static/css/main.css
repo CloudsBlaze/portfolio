@@ -1,8 +1,10 @@
 .image-container {
     position: relative;
-    width: 300px; /* Adjust the width as needed */
-    height: 200px; /* Adjust the height as needed */
-  }
+    width: 300px;
+    /* Adjust the width as needed */
+    height: 200px;
+    /* Adjust the height as needed */
+}
 
 .testimonial-quote blockquote p:first-child:before {
     content: '\201C';
@@ -37,22 +39,25 @@
 }
 
 .rhombus-container {
-    width: 5rem; /* Adjust the width as needed */
-    height: 5rem; /* Adjust the height as needed */
+    width: 5rem;
+    /* Adjust the width as needed */
+    height: 5rem;
+    /* Adjust the height as needed */
     /* margin: 50px; Adjust the margin as needed */
     overflow: hidden;
-  }
+}
 
 .rhombus {
     width: 100%;
     height: 100%;
-    background-color: #3498db; /* Adjust the background color as needed */
+    background-color: #3498db;
+    /* Adjust the background color as needed */
     transform: rotate(45deg);
     transform-origin: 50% 50%;
     position: relative;
-  }
+}
 
-.map_background{
+.map_background {
     background: url("../img/clients/world_map.png");
 }
 
@@ -63,7 +68,7 @@
     --bs-btn-hover-color: #fff;
     --bs-btn-hover-bg: #0b5ed7;
     --bs-btn-hover-border-color: #0a58ca;
-    --bs-btn-focus-shadow-rgb: 49,132,253;
+    --bs-btn-focus-shadow-rgb: 49, 132, 253;
     --bs-btn-active-color: #fff;
     --bs-btn-active-bg: #0a58ca;
     --bs-btn-active-border-color: #0a53be;
@@ -74,23 +79,31 @@
     border-radius: 0px;
 }
 
-.hero-section{
+.btn {
+    border-radius: 0px;
+}
+
+.hero-section {
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.46) 0%, rgba(0, 0, 0, 0.46) 100%);
     background-size: cover;
     background-position: center;
-    color: #fff; /* Text color on top of the background image */
+    color: #fff;
+    /* Text color on top of the background image */
     text-align: center;
-    padding: 100px 0; /* Adjust the padding as needed */
+    padding: 100px 0;
+    /* Adjust the padding as needed */
     height: 100%;
 }
 
 .home-banner-img {
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.46) 0%, rgba(0, 0, 0, 0.46) 100%),url('../img/banners/banner-home.jpg');
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.46) 0%, rgba(0, 0, 0, 0.46) 100%), url('../img/banners/banner-home.jpg');
     background-size: cover;
     background-position: center;
-    color: #fff; /* Text color on top of the background image */
+    color: #fff;
+    /* Text color on top of the background image */
     text-align: center;
-    padding: 100px 0; /* Adjust the padding as needed */
+    padding: 100px 0;
+    /* Adjust the padding as needed */
     height: 100%;
 }
 
@@ -98,12 +111,41 @@
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.46) 0%, rgba(0, 0, 0, 0.46) 100%), url('../img/banners/banner-service.jpg');
     background-size: cover;
     background-position: center;
-    color: #fff; /* Text color on top of the background image */
+    color: #fff;
+    /* Text color on top of the background image */
     text-align: center;
-    padding: 100px 0; /* Adjust the padding as needed */
+    padding: 100px 0;
+    /* Adjust the padding as needed */
     height: 100%;
 }
+
+.heading--text {
+    display: inline;
+    height: 60px;
+    margin-top: 98px;
+    color: #00B3A8;
+    transform: rotate(-90deg);
 }
+
+.ceo-heading {
+    font-weight: bold;
+    color: #000;
+    margin: 20px 20px;
+}
+
+.image-ceo {
+    background-color: #58b4a8;
+}
+
+
+.inspiring_quote {
+    background-image: url("../img/clients/world_map_2.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding: 120px;
+}
+
 
 /* .carousel-item::before {
     content: '';

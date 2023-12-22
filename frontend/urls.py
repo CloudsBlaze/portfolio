@@ -11,7 +11,7 @@ from frontend.views import (
 
 urlpatterns = [
     path("", HomeIndex.as_view(), name="home"),
-    path("contact-us", ContactUsIndex.as_view(), name="contact-submit"),
+    path("contact-us", ContactUsIndex.as_view(), name="contact_us"),
     path("services", ServiceIndex.as_view(), name="service"),
     path(
         "services/<str:title_slug>", ServiceDetailPage.as_view(), name="service_detail"
