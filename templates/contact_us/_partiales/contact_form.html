@@ -1,37 +1,33 @@
 {% load static %}
-<Section class="bg-light mt-5">
+<section class="py-5">
     <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <h1>Contact Us</h1>
-                <form method="POST" action="{% url 'contact-submit' %}">
-                    {% csrf_token %}
-                    <div class="mb-3 row">
-                        <div class="col-md-6">
-                            <label for="first_name" class="form-label">First Name</label>
-                            <input type="text" class="form-control" id="first_name" name="first_name"
-                                placeholder="first name" required>
-                        </div>
-                        <div class="col-md-6">
-                            <label for="last_name" class="form-label">Last Name</label>
-                            <input type="text" class="form-control" id="last_name" name="last_name"
-                                placeholder="last name">
-                        </div>
+        <div class="row gx-4 gx-lg-5 d-flex justify-content-around my-5 py-2 mx-auto">
+            <div class="col-lg-6">
+                <form form method="POST" action="{% url 'api-contact-us' %}" class="p-5"
+                    style="background-color: #F2F7FB;">
+                    <h1 class="py-4">We're just a message away!</h1>
+                    <div class="form-group  my-4">
+                        <label for="first_name" class="form-label">First Name</label>
+                        <input type="text" class="form-control" id="first_name" name="first_name"
+                            placeholder="first name" required>
+                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
+                            else.</small>
                     </div>
-                    <div class="mb-3">
+                    <div class="form-group  my-4">
                         <label for="email" class="form-label">Email</label>
                         <input type="email" class="form-control" id="email" name="email" placeholder="your's email"
                             required>
+                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
+                            else.</small>
                     </div>
-                    <div class="mb-3">
+                    <div class="form-group  my-4">
                         <label for="phone_number" class="form-label">Phone Number</label>
-                        <!-- <input type="text" class="form-control" id="phone_number" name="phone_number"> -->
                         <input type="tel" class="form-control" id="phone_number" name="phone_number"
                             pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="123-456-7890" required>
-                        <small id="phoneHelp" class="form-text text-muted">Please enter your phone number in the format:
-                            123-456-7890</small>
                     </div>
-                    <div class="mb-3">
+                    <div class="form-group  my-4">
+                        <!-- <label for="exampleInputfile">Upload document</label>
+                        <input type="file" class="form-control" id="exampleInputfile"> -->
                         <label for="description" class="form-label">Description</label>
                         <textarea class="form-control" id="description" name="description"
                             placeholder="Add your thoughts"></textarea>
@@ -39,7 +35,30 @@
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
             </div>
+            <div class="col-lg-6">
+                <!-- <img src="./img/contact-img.png" alt="Contact Image" width="600" height="350"> -->
+                <!-- <img src="https://via.placeholder.com/500x300" /> -->
+                <img src="{% static './img/clients/cloudsblaze_sliver.png' %}" width="500" height="350"
+                    class="img-fluid" />
+                <h3 class="my-4">During our meeting, you will receive the <br> following:</h3>
+                <ul style="width: 90%">
+                    <li>
+                        <p>A thorough evaluation of your project/idea allows us to identify its scope, objectives, and
+                            target
+                            audience.</p>
+                    </li>
+                    <li>
+                        <p>A thorough evaluation of your project/idea allows us to identify its scope, objectives, and
+                            target
+                            audience.</p>
+                    </li>
+                    <li>
+                        <p>Engaging in a collaborative brainstorming session, where we will generate innovative ideas
+                            and
+                            strategies.</p>
+                    </li>
+                </ul>
+            </div>
         </div>
     </div>
-
-</Section>
+</section>
