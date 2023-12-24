@@ -3,8 +3,7 @@
     <div class="container">
         <div class="row gx-4 gx-lg-5 d-flex justify-content-around my-5 py-2 mx-auto">
             <div class="col-lg-6">
-                <form form method="POST" action="{% url 'api-contact-us' %}" class="p-5"
-                    style="background-color: #F2F7FB;">
+                <form method="POST" action="{% url 'contact_us' %}" class="p-5" style="background-color: #F2F7FB;">
                     <h1 class="py-4">We're just a message away!</h1>
                     <div class="form-group  my-4">
                         <label for="first_name" class="form-label">First Name</label>
@@ -38,8 +37,8 @@
             <div class="col-lg-6">
                 <!-- <img src="./img/contact-img.png" alt="Contact Image" width="600" height="350"> -->
                 <!-- <img src="https://via.placeholder.com/500x300" /> -->
-                <img src="{% static './img/clients/cloudsblaze_sliver.png' %}" width="500" height="350"
-                    class="img-fluid" />
+                <img src="{% static '/img/clients/cloudsblaze_sliver.png' %}" width="500" height="350" class="img-fluid"
+                    alt="CloudsBlaze building">
                 <h3 class="my-4">During our meeting, you will receive the <br> following:</h3>
                 <ul style="width: 90%">
                     <li>

@@ -1,4 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.urls import reverse
+
 
 # Create your views here.
 from rest_framework.views import APIView
@@ -18,7 +20,6 @@ from contact_us.serializers import ContactUsSerializer
 
 import services.models as ServicesModels
 import services.serializers as ServicesSerializers
-from django.shortcuts import redirect
 
 # Create your views here.
 
@@ -75,6 +76,7 @@ class ContactUsIndex(MainView):
         )
 
     def post(self, request, pk=None, format=None):
+        print("request.data", request.data)
         serializer = ContactUsSerializer(data=request.data)
         print("serializer.is_valid() running from templates", serializer.is_valid())
         if serializer.is_valid():
@@ -85,7 +87,7 @@ class ContactUsIndex(MainView):
             request.session[
                 "message"
             ] = "Thank you for your kind support and valuable feedback. Your contribution means a lot to us, and it helps us improve our services. We appreciate your trust in us and look forward to serving you in the future."
-            return redirect("thank-you-page")
+            return redirect(reverse('thank-you-page'))
         return Response(
             {"stauts": "error", "data": serializer.errors},
             status=status.HTTP_400_BAD_REQUEST,

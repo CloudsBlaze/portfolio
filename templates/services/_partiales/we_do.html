@@ -12,9 +12,11 @@
         <div class="row row-cols-1 row-cols-md-3 g-4 mt-lg-3 mt-5">
             {% for d in context.service_catgories %}
             <div class="col">
-                <a href="{% url 'service_detail' title_slug=d.service_category_slug %}" class="text-decoration-none ">
-                    <div class="card h-100">
-                        <div class="card-body">
+
+                <div class="card h-100">
+                    <div class="card-body">
+                        <a href="{% url 'service_detail' title_slug=d.service_category_slug %}"
+                            class="text-decoration-none ">
                             <h5 class="card-title">
                                 <span>
                                     <svg width="40" height="40" viewBox="0 0 40 40" fill="none"
@@ -48,17 +50,15 @@
                                 <li>{{sub_d.name}}</li>
                                 {% endfor %}
                             </ul>
-                            <div class="d-flex">
-                                <button class="btn btn-primary flex-shrink-0" type="button">
-                                    Read more.
-                                </button>
-                            </div>
-
+                        </a>
+                        <div class="d-flex">
+                            <a href="#" class="btn btn-primary flex-shrink-0">
+                                Read more.
+                            </a>
                         </div>
+
                     </div>
-
-                </a>
-
+                </div>
             </div>
             {% endfor %}
             <div class="col">
@@ -97,9 +97,9 @@
                             <li>DevSeCops</li>
                         </ul>
                         <div class="d-flex">
-                            <button class="btn btn-primary flex-shrink-0" type="button">
+                            <a href="#" class="btn btn-primary flex-shrink-0">
                                 Read more.
-                            </button>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -144,9 +144,55 @@
                             <li>DevSeCops</li>
                         </ul>
                         <div class="d-flex">
-                            <button class="btn btn-primary flex-shrink-0" type="button">
+                            <a href="#" class="btn btn-primary flex-shrink-0">
                                 Read more.
-                            </button>
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            <span>
+                                <svg width="40" height="40" viewBox="0 0 40 40" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <g clip-path="url(#clip0_433_1264)">
+                                        <path
+                                            d="M36.2021 4.7306C31.8066 4.7306 23.8089 3.83552 21.3037 0.536879C20.878 -0.132065 19.9463 -0.191575 19.4375 0.446852C16.488 3.74488 8.47167 4.7306 3.75 4.7306C3.10272 4.7306 2.57812 5.25703 2.57812 5.90675V24.7275C2.57812 33.2044 12.3358 38.3826 19.7278 39.9927C20.6824 40.2002 37.3739 35.972 37.3739 24.7275V5.90675C37.3739 5.25733 36.8493 4.7306 36.2021 4.7306ZM35.0302 24.7275C35.0302 33.5614 21.9562 37.1433 19.9759 37.6343C17.9956 37.1433 4.92187 33.5614 4.92187 24.7275V7.06977C13.9712 6.86073 18.4842 4.25422 20.2783 2.84126C23.8934 6.03858 30.2154 6.96052 35.0302 7.07008V24.7275Z"
+                                            fill="#2D2D2D" />
+                                        <path
+                                            d="M14.1202 15.2778V18.8459H12.9443C12.2974 18.8459 11.7725 19.3727 11.7725 20.0221V29.4325C11.7725 30.0822 12.2974 30.6089 12.9443 30.6089H27.0068C27.6541 30.6089 28.1787 30.0822 28.1787 29.4325V20.0221C28.1787 19.3727 27.6541 18.8459 27.0068 18.8459H16.4639V15.2778C16.4639 13.4394 17.9117 11.7881 20.011 11.7881C21.9281 11.7881 23.4875 13.3534 23.4875 15.2778C23.4875 15.9272 24.0124 16.454 24.6594 16.454C25.3067 16.454 25.8313 15.9272 25.8313 15.2778C25.8313 12.0564 23.2205 9.43555 20.011 9.43555C16.5988 9.43555 14.1202 12.1626 14.1202 15.2778ZM25.8349 28.2563H14.1162V21.1985H25.8349V28.2563Z"
+                                            fill="#00B3A8" />
+                                        <path
+                                            d="M21.1475 24.7274C21.1475 24.0777 20.6229 23.5513 19.9756 23.5513C19.3286 23.5513 18.8037 24.0777 18.8037 24.7274C18.8037 25.3771 19.3286 25.9039 19.9756 25.9039C20.6229 25.9039 21.1475 25.3771 21.1475 24.7274Z"
+                                            fill="#2D2D2D" />
+                                    </g>
+                                    <defs>
+                                        <clipPath id="clip0_433_1264">
+                                            <rect width="40" height="40" fill="white" />
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+
+
+                            </span>
+                            Cyber Security
+                        </h5>
+                        <p class="card-text">Protect your digital assets with our cybersecurity services. From risk
+                            assessments to penetration testing, we ensure the resilience of your business against
+                            threats.</p>
+                        <p class="card-text h5">Popular Features</p>
+                        <ul>
+                            <li>Compliance Implementation</li>
+                            <li>Augment sourcing</li>
+                            <li>Penetration Testing</li>
+                            <li>DevSeCops</li>
+                        </ul>
+                        <div class="d-flex">
+                            <a href="#" class="btn btn-primary flex-shrink-0">Read more.</a>
                         </div>
 
                     </div>
@@ -193,58 +239,9 @@
                             <li>DevSeCops</li>
                         </ul>
                         <div class="d-flex">
-                            <button class="btn btn-primary flex-shrink-0" type="button">
+                            <a href="#" class="btn btn-primary flex-shrink-0">
                                 Read more.
-                            </button>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">
-                            <span>
-                                <svg width="40" height="40" viewBox="0 0 40 40" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <g clip-path="url(#clip0_433_1264)">
-                                        <path
-                                            d="M36.2021 4.7306C31.8066 4.7306 23.8089 3.83552 21.3037 0.536879C20.878 -0.132065 19.9463 -0.191575 19.4375 0.446852C16.488 3.74488 8.47167 4.7306 3.75 4.7306C3.10272 4.7306 2.57812 5.25703 2.57812 5.90675V24.7275C2.57812 33.2044 12.3358 38.3826 19.7278 39.9927C20.6824 40.2002 37.3739 35.972 37.3739 24.7275V5.90675C37.3739 5.25733 36.8493 4.7306 36.2021 4.7306ZM35.0302 24.7275C35.0302 33.5614 21.9562 37.1433 19.9759 37.6343C17.9956 37.1433 4.92187 33.5614 4.92187 24.7275V7.06977C13.9712 6.86073 18.4842 4.25422 20.2783 2.84126C23.8934 6.03858 30.2154 6.96052 35.0302 7.07008V24.7275Z"
-                                            fill="#2D2D2D" />
-                                        <path
-                                            d="M14.1202 15.2778V18.8459H12.9443C12.2974 18.8459 11.7725 19.3727 11.7725 20.0221V29.4325C11.7725 30.0822 12.2974 30.6089 12.9443 30.6089H27.0068C27.6541 30.6089 28.1787 30.0822 28.1787 29.4325V20.0221C28.1787 19.3727 27.6541 18.8459 27.0068 18.8459H16.4639V15.2778C16.4639 13.4394 17.9117 11.7881 20.011 11.7881C21.9281 11.7881 23.4875 13.3534 23.4875 15.2778C23.4875 15.9272 24.0124 16.454 24.6594 16.454C25.3067 16.454 25.8313 15.9272 25.8313 15.2778C25.8313 12.0564 23.2205 9.43555 20.011 9.43555C16.5988 9.43555 14.1202 12.1626 14.1202 15.2778ZM25.8349 28.2563H14.1162V21.1985H25.8349V28.2563Z"
-                                            fill="#00B3A8" />
-                                        <path
-                                            d="M21.1475 24.7274C21.1475 24.0777 20.6229 23.5513 19.9756 23.5513C19.3286 23.5513 18.8037 24.0777 18.8037 24.7274C18.8037 25.3771 19.3286 25.9039 19.9756 25.9039C20.6229 25.9039 21.1475 25.3771 21.1475 24.7274Z"
-                                            fill="#2D2D2D" />
-                                    </g>
-                                    <defs>
-                                        <clipPath id="clip0_433_1264">
-                                            <rect width="40" height="40" fill="white" />
-                                        </clipPath>
-                                    </defs>
-                                </svg>
-
-
-                            </span>
-                            Cyber Security
-                        </h5>
-                        <p class="card-text">Protect your digital assets with our cybersecurity services. From risk
-                            assessments to penetration testing, we ensure the resilience of your business against
-                            threats.</p>
-                        <p class="card-text h5">Popular Features
-                        </p>
-                        <ul>
-                            <li>Compliance Implementation</li>
-                            <li>Augment sourcing</li>
-                            <li>Penetration Testing</li>
-                            <li>DevSeCops</li>
-                        </ul>
-                        <div class="d-flex">
-                            <button class="btn btn-primary flex-shrink-0" type="button">
-                                Read more.
-                            </button>
+                            </a>
                         </div>
 
                     </div>
@@ -253,9 +250,9 @@
         </div>
         <div class="row gx-4 gx-lg-5 mt-lg-3 mt-5">
             <div class="d-flex justify-content-center">
-                <button class="btn btn-primary flex-shrink-0" type="button">
+                <a href="#" class="btn btn-primary flex-shrink-0">
                     Read more.
-                </button>
+                </a>
             </div>
 
         </div>

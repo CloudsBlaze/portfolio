@@ -25,7 +25,7 @@ urlpatterns = [
     path("", include("events.urls")),
     path("", include("image.urls")),
     path("", include("frontend.urls")),
-    path("", include("contact_us.urls")),
+    path("api/", include("contact_us.urls")),
     path("api/", include("services.urls"))
     # path('api/contact-us', include('contact_us.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

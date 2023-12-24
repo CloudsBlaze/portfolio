@@ -2,21 +2,23 @@
 <section class="py-5 mt-5 ">
     <div class="container">
         <div class="row gx-4 gx-lg-5 align-items-between">
-            <div class="col-lg-5 col-12"><img class="card-img-top mb-5 mb-md-0 img-fluid"
-                    src="{% static '\img\banners\about-us-2.jpg' %}" alt="..." /></div>
+            <div class="col-lg-5 col-12">
+                <img class="card-img-top mb-5 mb-md-0 img-fluid" src="{% static '\img\banners\about-us-2.jpg' %}"
+                    alt="...">
+            </div>
             <div class="col-lg-7 col-12 gap-3">
                 <div class="primary-heading-green">
                     ABOUT US
                 </div>
-                <h3 class="primary-heading-second">Accelerate Your Business <br>Growth With Us modify it.</h3>
+                <h3 class="primary-heading-second">Accelerate Your Business <br>Growth With Us</h3>
                 <p class="lead">Welcome to CloudsBlaze, where innovation meets excellence. We are a passionate team
                     dedicated to providing cutting-edge solutions tailored to your unique needs. Our commitment is to
                     deliver quality, reliability, and a seamless experience. Discover the story behind our success and
                     how we can make a difference for you.</p>
                 <div class="d-flex">
-                    <button class="btn btn-primary flex-shrink-0" type="button">
+                    <a href="{% url 'aboutus' %}" class="btn btn-primary flex-shrink-0">
                         Get to know us better
-                    </button>
+                    </a>
                 </div>
             </div>
         </div>

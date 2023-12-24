@@ -1,5 +1,5 @@
 {% load static%}
-<section class="py-5 h-25" style="background-color: #00B3A8;">
+<div class="py-5 h-25" style="background-color: #00B3A8;">
     <div class="container">
         <div class="row gx-4 gx-lg-5 align-items-between justify-content-between  gap-3 gap-lg-0">
             <div class="col-lg-6 col-12 text-lg-start text-center primary-heading-second">
@@ -9,13 +9,14 @@
                     We’ll Build it for you
                 </span>
                 <div class="d-flex mt-3">
-                    <button class="btn btn-primary flex-shrink-0" type="button">
+                    <a href="{% url 'service' %}" rel="Get to know us better" class="btn btn-primary flex-shrink-0">
                         Get to know us better
-                    </button>
+                    </a>
                 </div>
             </div>
             <div class="col-lg-4 col-12 text-lg-end text-center">
-                <img src="{% static 'img\clients\illustration.png' %}" class="img-fluid" />
+                <img src="{% static 'img\clients\illustration.png' %}" class="img-fluid"
+                    alt="square triangle ilustrations">
                 <!-- <svg width="44rem" height="21rem" viewBox="0 0 708 346" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <g clip-path="url(#clip0_187_13196)">
                         <mask id="mask0_187_13196" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0"
@@ -156,4 +157,4 @@
             </div>
         </div>
     </div>
-</section>
+</div>
