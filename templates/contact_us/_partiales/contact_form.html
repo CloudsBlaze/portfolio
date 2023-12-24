@@ -4,6 +4,7 @@
         <div class="row gx-4 gx-lg-5 d-flex justify-content-around my-5 py-2 mx-auto">
             <div class="col-lg-6">
                 <form method="POST" action="{% url 'contact_us' %}" class="p-5" style="background-color: #F2F7FB;">
+                    {% csrf_token %}
                     <h1 class="py-4">We're just a message away!</h1>
                     <div class="form-group  my-4">
                         <label for="first_name" class="form-label">First Name</label>
