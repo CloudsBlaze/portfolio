@@ -1,0 +1,44 @@
+{% load static %}
+<nav class="navbar navbar-expand-lg">
+    <div class="container">
+        <a class="navbar-brand" href="{% url 'home' %}">
+            <div class="d-flex flex-row gap-2 align-items-center  ">
+                <img src="{% static 'img/logo/logo-color.png' %}" alt="Logo" height="35"
+                    class="d-inline-block align-text-top">
+                <div class="d-flex flex-column">
+                    <h2 class="fw-bold fs-4 logo-color mb-0" style="font-size: 1.8rem !important">CloudsBlaze</h2>
+                    <span class="fw-1 fs-6 text-muted lh-1" style="font-size: 0.8rem !important">Innovate . Incubate
+                        .
+                        Integrate</span>
+                </div>
+            </div>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'service' %}" aria-expanded="false">
+                        Services
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'aboutus' %}" aria-expanded="false">
+                        About us
+                    </a>
+                </li>
+            </ul>
+
+            <div class="d-flex">
+                <!-- <button type=" button" class="btn btn-primary mx-lg-2 mx-sm-0 px-4">Hire talent</button> -->
+                <a href="{% url 'contact_us' %}" class="btn btn-outline-primary mx-lg-2 mx-sm-0 px-4">Contact
+                    Us</a>
+            </div>
+        </div>
+    </div>
+</nav>

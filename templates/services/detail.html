@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %}
+Home Page
+{% endblock%}
+
+
+{% block main-content %}
+
+{% include 'services/_partiales_detail/hero_section.html' %}
+{% include 'services/_partiales_detail/about_us.html' %}
+{% include 'services/_partiales_detail/we_do.html' %}
+{% include 'services/_partiales_detail/custom_solution.html' %}
+{% include 'services/_partiales/technologies.html' %}
+
+
+{% include 'frontend/_partiales/testimonials.html' %}
+{% include 'frontend/_partiales/case_study.html' %}
+{% include 'frontend/_partiales/partner_stories.html' %}
+{% include 'services/_partiales/faqs.html' %}
+{% include '_partiales/inline_contact_form.html' %}
+{% include 'frontend/_partiales/built_for.html' %}
+{% endblock %}

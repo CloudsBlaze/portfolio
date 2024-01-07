@@ -1,0 +1,49 @@
+{% load static %}
+<div class="container bg-gray py-5">
+    <div class=" d-flex flex-column">
+        <h2 class="text-center">Past Events</h2>
+        <p class="text-center">We envision specialized and customized trainings for every business arena to get mastery
+            in decision
+            making.</p>
+    </div>
+    <div class="row row-cols-1 row-cols-md-3 g-2 mt-5">
+        <!-- #{%for d in data.events|slice:":3" %} -->
+        <div class="col">
+            <div class="card h-100">
+                <img src="https://dummyimage.com/350x350" class=" card-img-top" alt="{{ d.name }}">
+                <div class="card-body">
+                    <h5 class="card-title">{{ d.name }}</h5>
+                    <p class="card-text">{{d.discription}}</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+
+                </div>
+            </div>
+        </div>
+        <!-- #{% endfor %} -->
+    </div>
+
+    <!-- <div class="d-flex flex-row align-items-center gap-30">
+        {% for d in data.events|slice:":3" %}
+        <div class="d-flex flex-column align-items-start gap-20">
+            <img src="{{d.event_images.0.image}}" class=" card-img-top" alt="{{ d.name }}" style="height: 25rem;">
+            <div class="d-flex flex-column align-items-start gap-20">
+                <h5 class="card-title">{{ d.name }}</h5>
+                <p class="card-text">{{d.discription}}</p>
+            </div>
+
+        </div>
+        {% endfor %}
+        <div class="d-flex flex-column align-items-start gap-20">
+            <img src="{% static 'thumbnails/python.png'%}" class=" card-img-top" alt="{{ d.name }}"
+                style="height: 25rem">
+            <div class="d-flex flex-column align-items-start gap-20">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">This is a longer card with supporting text below as a natural
+                    lead-in to
+                    additional
+                    content.</p>
+            </div>
+        </div>
+
+    </div> -->
+</div>

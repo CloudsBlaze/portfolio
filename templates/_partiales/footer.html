@@ -1,0 +1,164 @@
+{% load static%}
+<footer class="pt-5 pb-3">
+	<div class="container container-sm ">
+		<div class="row gap-5 gap-sm-3 gap-lg-0 text-center text-lg-start ">
+			<div class="col-lg-3 col-12 text-sm-center text-lg-start ">
+				<h4>Quick Links</h4>
+				<ul class="list-unstyled links d-flex flex-column gap-3">
+					<li><a href="{% url 'home' %}" class="text-decoration-none text-primary "> Home </a></li>
+					<li><a href="{% url 'aboutus' %}" class="text-decoration-none text-primary "> About Us </a>
+					</li>
+					<li><a href="{% url 'service' %}" class="text-decoration-none text-primary "> Services </a>
+					</li>
+					<!-- <li><a href="{% url 'api-contact-us' %}" class="text-decoration-none text-primary "> Technologies
+						</a></li>
+					<li><a href="{% url 'api-contact-us' %}" class="text-decoration-none text-primary "> Case Studies
+						</a></li> -->
+					<li><a href="{% url 'contact_us' %}" class="text-decoration-none text-primary "> Contact Us </a>
+					</li>
+					<!-- <li><a href="{% url 'api-contact-us' %}" class="text-decoration-none text-primary ">Sell online</a>
+					</li> -->
+				</ul>
+			</div>
+			<div class="col-lg-3 col-12 text-sm-center text-lg-start ">
+				<h4>Information</h4>
+				<ul class="list-unstyled links d-flex flex-column gap-3">
+					<li><a href="#" class="text-decoration-none text-primary ">Testimonial</a></li>
+					<li><a href="#" class="text-decoration-none text-primary ">Blog</a></li>
+					<li><a href="#" class="text-decoration-none text-primary ">Support</a></li>
+				</ul>
+			</div>
+			<div class="col-lg-3 col-12 text-sm-center text-lg-start ">
+				<h4>Contact Us</h4>
+				<ul class="list-unstyled links d-flex flex-column gap-2">
+					<li>
+						<a class="bi bi-geo-alt-fill text-decoration-none text-primary" href="#">Office #
+							202
+							Zarnooni Building, Amer Center Frij
+							Murar Road, Deria Dubai</a>
+					</li>
+					<li>
+						<a href="#" class="text-decoration-none text-primary  bi bi-telephone-fill">(92)
+							331-448-7050</a>
+					</li>
+
+					<li><a href="#" class="text-decoration-none text-primary bi bi-geo-alt-fill">112/15
+							Quaid-e-Azam Boulevard, Quaid-e-Azam
+							Industrial Estate, Lahore, Punjab 54000</a></li>
+					<li><a href="#"
+							class="text-decoration-none text-primary bi bi-envelope-at-fill">info.pk@cloudblaze.com</a>
+					</li>
+				</ul>
+			</div>
+			<div class="col-lg-3 col-12 text-sm-center text-lg-end ">
+				<!-- <div
+					style="padding-left: 32px; padding-right: 32px; padding-top: 28px; padding-bottom: 28px; background: #E5F7F6; border-radius: 8px; border: 1px #00B3A8 solid; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 24px; display: inline-flex">
+					<div
+						style="flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 12px; display: flex">
+						<div
+							style="color: #2D2D2D; font-size: 16px; font-family: Poppins; font-weight: 500; line-height: 28px; word-wrap: break-word">
+							Subscribe our Newsletter</div>
+						<div style="width: 248px; height: 49px; position: relative">
+							<div
+								style="width: 248px; height: 49px; left: 0px; top: 0px; position: absolute; background: white; border-radius: 4px; border: 1.50px solid">
+							</div>
+							<div
+								style="left: 14px; top: 14px; position: absolute; color: #6C757D; font-size: 14px; font-family: Poppins; font-weight: 400; word-wrap: break-word">
+								Email address</div>
+							<div
+								style="padding: 18px; left: 197px; top: 49px; position: absolute; transform: rotate(-90deg); transform-origin: 0 0; background: #003348; border-top-left-radius: 4px; border-top-right-radius: 4px; justify-content: flex-start; align-items: flex-start; gap: 10px; display: inline-flex">
+								<div style="width: 13px; height: 15px; position: relative">
+									<div
+										style="width: 13px; height: 15.28px; left: 0px; top: 0px; position: absolute; background: white">
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div
+						style="width: 260px; color: #6C757D; font-size: 14px; font-family: Poppins; font-weight: 400; line-height: 20.40px; word-wrap: break-word">
+						Cloudblaze is a leading software design and development company working in FinTech,
+						Education, ERP, eCommerce, Compliance Management, etc.</div>
+				</div> -->
+			</div>
+		</div>
+		<hr>
+		<div class="row gap-5 gap-sm-3 gap-lg-0 ">
+			<div class="col-lg-3 col-12 text-center  align-items-center justify-content-center  text-lg-start">
+				<div
+					class="d-flex flex-row gap-2 align-items-center justify-content-center  justify-content-lg-start  ">
+					<img src="{% static '.\img\logo\logo-color.png' %}" alt="Logo" height="35"
+						class="d-inline-block align-text-top">
+					<div class="d-flex flex-column">
+						<h2 class="fw-bold fs-4 logo-color mb-0" style="font-size: 1.8rem !important">CloudsBlaze
+						</h2>
+						<span class="fw-1 fs-6 text-muted lh-1" style="font-size: 0.8rem !important">Innovate .
+							Incubate
+							.
+							Integrate</span>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-6 col-12 d-flex justify-content-around align-items-center text-sm-center text-lg-start ">
+				<span class="text-muted ">&copy; 2010 - {% now "Y" %}</span>
+				<span class="text-muted ">Privacy Policy</span>
+				<span class="text-muted "> Terms of use</span>
+				<span class="text-muted ">Contact us</span>
+
+
+			</div>
+			<div class="col-lg-3 col-12 text-lg-end text-center gap-4 gap-sm-5">
+				<div>
+					<svg width="135" height="37" viewBox="0 0 135 37" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<a href="https://pk.linkedin.com/company/itscloudsblaze" rel="itscloudsblaze linkedin">
+							<path fill-rule="evenodd" clip-rule="evenodd"
+								d="M18.5 36C28.165 36 36 28.165 36 18.5C36 8.83502 28.165 1 18.5 1C8.83502 1 1 8.83502 1 18.5C1 28.165 8.83502 36 18.5 36Z"
+								stroke="#DEE2E6" />
+							<path
+								d="M14.4835 14.9671C15.3029 14.9671 15.9671 14.3029 15.9671 13.4835C15.9671 12.6642 15.3029 12 14.4835 12C13.6642 12 13 12.6642 13 13.4835C13 14.3029 13.6642 14.9671 14.4835 14.9671Z"
+								fill="#0A142F" />
+							<path
+								d="M15.7198 15.958H13.2473C13.1108 15.958 13 16.0688 13 16.2053V23.623C13 23.7595 13.1108 23.8703 13.2473 23.8703H15.7198C15.8563 23.8703 15.9671 23.7595 15.9671 23.623V16.2053C15.9671 16.0688 15.8563 15.958 15.7198 15.958Z"
+								fill="#0A142F" />
+							<path
+								d="M23.088 15.5464C22.0313 15.1844 20.7094 15.5024 19.9167 16.0726C19.8895 15.9662 19.7926 15.8871 19.6774 15.8871H17.2048C17.0683 15.8871 16.9575 15.9979 16.9575 16.1344V23.5521C16.9575 23.6886 17.0683 23.7994 17.2048 23.7994H19.6774C19.8138 23.7994 19.9246 23.6886 19.9246 23.5521V18.2212C20.3242 17.8771 20.839 17.7673 21.2603 17.9463C21.6688 18.1189 21.9027 18.5402 21.9027 19.1015V23.5521C21.9027 23.6886 22.0135 23.7994 22.1499 23.7994H24.6225C24.759 23.7994 24.8698 23.6886 24.8698 23.5521V18.6035C24.8416 16.5715 23.8857 15.8194 23.088 15.5464Z"
+								fill="#0A142F" />
+						</a>
+
+						<a href="https://www.facebook.com/itscloudsblaze" rel="itscloudsblaze facebook">
+							<path fill-rule="evenodd" clip-rule="evenodd"
+								d="M67.5 36C77.165 36 85 28.165 85 18.5C85 8.83502 77.165 1 67.5 1C57.835 1 50 8.83502 50 18.5C50 28.165 57.835 36 67.5 36Z"
+								stroke="#DEE2E6" />
+							<path
+								d="M69.0932 14.0208H70.7016C70.8495 14.0208 70.9696 13.9076 70.9696 13.7682V12.2526C70.9696 12.1132 70.8495 12 70.7016 12H69.0932C67.4677 12 66.1445 13.2463 66.1445 14.7786V16.5468H64.2681C64.1201 16.5468 64 16.6599 64 16.7994V18.3149C64 18.4544 64.1201 18.5675 64.2681 18.5675H66.1445V23.8721C66.1445 24.0115 66.2646 24.1247 66.4126 24.1247H68.0209C68.1689 24.1247 68.289 24.0115 68.289 23.8721V18.5675H70.1655C70.2807 18.5675 70.3831 18.4978 70.4201 18.3948L70.9562 16.8792C70.9836 16.8024 70.9696 16.7175 70.9192 16.6513C70.8683 16.5857 70.7879 16.5468 70.7016 16.5468H68.289V14.7786C68.289 14.3608 68.6498 14.0208 69.0932 14.0208Z"
+								fill="#0A142F" />
+						</a>
+
+						<a href="https://www.twitter.com/itscloudsblaze" rel="itscloudsblaze twitter">
+							<path fill-rule="evenodd" clip-rule="evenodd"
+								d="M116.5 36C126.165 36 134 28.165 134 18.5C134 8.83502 126.165 1 116.5 1C106.835 1 99 8.83502 99 18.5C99 28.165 106.835 36 116.5 36Z"
+								stroke="#DEE2E6" />
+							<path
+								d="M122.22 15.2647C122.139 15.1729 122.008 15.1498 121.901 15.2064C121.834 15.2416 121.708 15.2878 121.559 15.3334C121.747 15.0762 121.899 14.7882 121.965 14.5293C121.994 14.4177 121.952 14.3001 121.86 14.2336C121.768 14.1677 121.646 14.1677 121.554 14.2336C121.409 14.3375 120.71 14.6497 120.268 14.7508C119.27 13.8511 118.107 13.7577 116.899 14.4831C115.917 15.0729 115.703 16.2721 115.745 17.0031C113.497 16.7805 112.1 15.5593 111.313 14.5485C111.258 14.4776 111.169 14.4403 111.086 14.4458C110.999 14.4524 110.919 14.5024 110.875 14.5799C110.503 15.2257 110.4 15.9396 110.577 16.6447C110.675 17.0295 110.845 17.3686 111.042 17.6434C110.947 17.5956 110.856 17.5357 110.77 17.4642C110.691 17.3972 110.58 17.3845 110.487 17.429C110.394 17.4747 110.334 17.5714 110.334 17.6775C110.334 18.8882 111.071 19.6962 111.758 20.1183C111.647 20.1045 111.531 20.0792 111.414 20.0424C111.314 20.0111 111.205 20.0424 111.135 20.1238C111.066 20.2046 111.049 20.32 111.093 20.4184C111.479 21.2972 112.211 21.9017 113.117 22.121C112.326 22.5986 111.267 22.8328 110.298 22.7179C110.172 22.6998 110.053 22.7817 110.013 22.9059C109.974 23.0301 110.025 23.1664 110.136 23.2301C111.607 24.0793 112.936 24.3827 114.085 24.3827C115.757 24.3827 117.047 23.7407 117.833 23.2038C119.95 21.7583 121.27 19.163 121.086 16.841C121.426 16.5832 121.933 16.1072 122.248 15.5955C122.313 15.4922 122.301 15.3559 122.22 15.2647Z"
+								fill="#0A142F" />
+						</a>
+					</svg>
+				</div>
+
+
+			</div>
+
+		</div>
+
+	</div>
+
+</footer>
+
+<!-- <div class="row">
+	<div class="col-sm-4 bg-body-secondary d-flex justify-content-center ">
+		<div>.col-sm-4</div>
+	</div>
+	<div class="col-sm-8 bg-primary-subtle d-flex justify-content-center ">
+		<div>.col-sm-8</div>
+	</div>
+</div> -->

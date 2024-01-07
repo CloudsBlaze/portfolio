@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block title %}
+Home Page
+{% endblock%}
+
+{% block seo %}
+<script type="application/ld+json">
+    {
+      "@context": "https://schema.org/",
+      "@type": "AboutPage",
+      "about": {
+        "@type": "Thing",
+        "sameAs": "https://cloudsblaze.com/",
+        "url": "https://cloudsblaze.com/about-us",
+        "image": "https://cloudsblaze.com/static/img/logo/logo_white.png",
+        "additionalType": "",
+        "name": " CloudsBlaze",
+        "mainEntityOfPage": "https://cloudsblaze.com/about-us",
+        "description": "Welcome to CloudsBlaze, where innovation meets excellence. We are a passionate team dedicated to providing cutting-edge solutions tailored to your unique needs. Our commitment is to deliver quality, reliability, and a seamless experience. Discover the story behind our success and how we can make a difference for you.",
+        "alternateName": "About us"
+      }
+    }
+</script>
+{% endblock %}
+
+
+{% block main-content %}
+
+{% include 'about_us/_partiales/hero_section.html' %}
+{% include 'about_us/_partiales/history.html' %}
+{% include 'about_us/_partiales/ceo_message.html' %}
+{% include 'about_us/_partiales/our_mission.html' %}
+{% include 'about_us/_partiales/inspiring_quote.html' %}
+{% include 'about_us/_partiales/who_we_are.html' %}
+{% include 'frontend/_partiales/testimonials.html' %}
+{% include 'frontend/_partiales/certifications.html' %}
+{% include 'frontend/_partiales/built_for.html' %}
+
+{% endblock %}

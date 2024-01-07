@@ -1,0 +1,73 @@
+{% load static %}
+<div class="py-5">
+    <div class="double_bg">
+        <div class="container">
+            <div class="row my-5 d-flex flex-row text-start p-5">
+                <div class="d-flex flex-column col-lg-5 text-start p-5" style="background-color: #00B3A8;">
+                    <div class="m-2">
+                        <div class="p-2">
+                            <h3 class="text-white primary-heading-second">Offices</h3>
+                            <p class="text-light fs-4 fw-medium font-family-Poppins">UAE Office
+                            </p>
+                            <p face="Anonymous Pro" class="text-white">Office # 202 Zarnooni Building, Amer Center Frij
+                                Murar Road, Deria Dubai</p>
+                            <p class="text-white">(971) 567-832-719</p>
+                        </div>
+                        <div class="p-2">
+                            <p class="text-light fs-4 fw-medium font-family-Poppins">Pakistan Office</p>
+                            <p face="Anonymous Pro" class="text-white">112/15 Quaid-e-Azam Boulevard, Quaid-e-Azam
+                                Industrial Estate, Lahore, Punjab 54000</p>
+                            <p class="text-white">info.pk@cloudblaze.com</p>
+                        </div>
+                        <!-- <div class="p-2">
+                            <p class="text-light fs-4 fw-medium font-family-Poppins">Pakistan Office</p>
+                            <p face="Anonymous Pro" class="text-white">Source code Solutions 202, 2nd Floor, High Q
+                                Tower,
+                                Jail
+                                Road,
+                                Gulberg 2, Lahore</p>
+                            <p class="text-white">info.pk@cloudblaze.com</p>
+                        </div> -->
+
+                    </div>
+                </div>
+                <div class="col-lg-7 px-5">
+                    <form form method="POST" action="{% url 'api-contact-us' %}" class="p-5"
+                        style="background-color: #F2F7FB;">
+                        <h3 class="primary-heading-second">We're just a message away!</h3>
+                        <div class="form-group  my-4">
+                            <label for="first_name" class="form-label">First Name</label>
+                            <input type="text" class="form-control" id="first_name" name="first_name"
+                                placeholder="first name" required>
+                            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
+                                else.</small>
+                        </div>
+                        <div class="form-group  my-4">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" name="email" placeholder="your's email"
+                                required>
+                            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
+                                else.</small>
+                        </div>
+                        <div class="form-group  my-4">
+                            <label for="phone_number" class="form-label">Phone Number</label>
+                            <input type="tel" class="form-control" id="phone_number" name="phone_number"
+                                pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="123-456-7890" required>
+                        </div>
+                        <div class="form-group  my-4">
+                            <!-- <label for="exampleInputfile">Upload document</label>
+                            <input type="file" class="form-control" id="exampleInputfile"> -->
+                            <label for="description" class="form-label">Description</label>
+                            <textarea class="form-control" id="description" name="description"
+                                placeholder="Add your thoughts"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>
