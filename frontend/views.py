@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from django.urls import reverse
+import requests
 
 
 # Create your views here.
@@ -17,6 +18,7 @@ from django.shortcuts import get_object_or_404
 from rest_framework.renderers import TemplateHTMLRenderer
 from django.views.generic.list import ListView
 from contact_us.serializers import ContactUsSerializer
+from django.conf import settings
 
 import services.models as ServicesModels
 import services.serializers as ServicesSerializers
@@ -31,6 +33,37 @@ class MainView(APIView):
             services_raw, many=True
         )
 
+        def get_reviews():
+            headers = {"Authorization": f"Bearer {settings.STRAPI_TOKEN}"}
+            response = requests.get(
+                "http://localhost:1337/api/reviews?pagination[pageSize]=4&pagination[page]=1",
+                headers=headers,
+                timeout=50,
+            )
+
+            if response.status_code == 200:
+                # Print the content of the response
+                print(response.json())
+                return response.json()["data"]
+            else:
+                # Print an error message if the request was not successful
+                print(f"Error: {response.status_code}")
+
+        def get_articles():
+            headers = {"Authorization": f"Bearer {settings.STRAPI_TOKEN}"}
+            response = requests.get(
+                "http://localhost:1337/api/articles?populate=*&pagination[pageSize]=4&pagination[page]=1",
+                headers=headers,
+            )
+
+            if response.status_code == 200:
+                # Print the content of the response
+                print(response.json())
+                return response.json()["data"]
+            else:
+                # Print an error message if the request was not successful
+                print(f"Error: {response.status_code}")
+
         #     events_raw =  events_models.Event.objects.all()
         #     events = events_serializers.EventSerializer(events_raw, many=True)
 
@@ -42,12 +75,13 @@ class MainView(APIView):
 
         context = {}
         context["service_catgories"] = service_catgories.data
+        context["reviews"] = get_reviews()
+        context["articles"] = get_articles()
         #     context["events"] = events.data
         #     context["clients"] = clients.data
         #     context["course_catagoery"] = course_catagoery.data
 
         return context
-        pass
 
 
 class HomeIndex(MainView):
@@ -87,7 +121,7 @@ class ContactUsIndex(MainView):
             request.session[
                 "message"
             ] = "Thank you for your kind support and valuable feedback. Your contribution means a lot to us, and it helps us improve our services. We appreciate your trust in us and look forward to serving you in the future."
-            return redirect(reverse('thank-you-page'))
+            return redirect(reverse("thank-you-page"))
         return Response(
             {"stauts": "error", "data": serializer.errors},
             status=status.HTTP_400_BAD_REQUEST,
@@ -125,6 +159,38 @@ class ServiceDetailPage(MainView):
                 {"stauts": "success", "data": serializer.data, "context": context},
                 status=status.HTTP_200_OK,
             )
+
+        return Response(
+            {"stauts": "success", "context": context}, status=status.HTTP_200_OK
+        )
+
+
+class BlogDetailPage(MainView):
+    renderer_classes = [TemplateHTMLRenderer]
+    template_name = "./blogs/detail.html"
+
+    def get(self, request, pk=None, title_slug=None, format=None):
+        main = MainView()
+        context = main.get(request, pk=None, format=None)
+
+        if title_slug is not None:
+            headers = {"Authorization": f"Bearer {settings.STRAPI_TOKEN}"}
+            response = requests.get(
+                f"http://localhost:1337/api/articles/?filters[slug][$eq]={title_slug}&populate=*&pagination[pageSize]=4&pagination[page]=1",
+                headers=headers,
+            )
+
+            if response.status_code == 200:
+                # Print the content of the response
+                blog = response.json()["data"][0]
+
+                return Response(
+                    {"stauts": "success", "blog": blog, "context": context},
+                    status=status.HTTP_200_OK,
+                )
+            else:
+                # Print an error message if the request was not successful
+                print(f"Error: {response.status_code}")
 
         return Response(
             {"stauts": "success", "context": context}, status=status.HTTP_200_OK

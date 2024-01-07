@@ -4,6 +4,7 @@ from frontend.views import (
     ContactUsIndex,
     ServiceIndex,
     ServiceDetailPage,
+    BlogDetailPage,
     AboutIndex,
     thank_you,
     #    APIIndex
@@ -16,6 +17,7 @@ urlpatterns = [
     path(
         "services/<str:title_slug>", ServiceDetailPage.as_view(), name="service_detail"
     ),
+    path("blog/<str:title_slug>", BlogDetailPage.as_view(), name="blog_detail"),
     path("about-us", AboutIndex.as_view(), name="aboutus"),
     path("thank-you/", thank_you, name="thank-you-page")
     # path("api", APIIndex.as_view()),
